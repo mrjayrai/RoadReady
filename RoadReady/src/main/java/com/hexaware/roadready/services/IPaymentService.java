@@ -1,5 +1,9 @@
 package com.hexaware.roadready.services;
-
+/*
+ * Author:Rajeshwari
+ * Description: Service Interface for payment
+ * Date:12-11-2024
+ */
 import java.util.List;
 import java.util.Optional;
 
@@ -7,7 +11,7 @@ import com.hexaware.roadready.entities.Payments;
 
 public interface IPaymentService {
 	 // Method to process a new payment
-    Payments addPayment(int userId,int bookingId, double amount, String paymentMethod,String status);
+    Payments addPayment(Payments payment);
 
     // Method to retrieve a payment by its ID
     Optional<Payments> getPaymentById(int paymentId);

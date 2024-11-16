@@ -1,19 +1,26 @@
 package com.hexaware.roadready.entities;
+/*
+ * Author:Rajeshwari
+ * Description: Entity class for payment with hibernate mapping
+ * Date:16-11-2024
+ */
 
-
-
-import java.time.LocalDate;
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.PrePersist;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "payments")
@@ -22,62 +29,54 @@ public class Payments {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "payment_id")
-    private Integer paymentId;
+    private int paymentId;
+    
+   
+    @NotNull(message = "Amount cannot be null")
+    @DecimalMin(value = "0.01", message = "Amount must be greater than zero")
+    @Column(name = "amount", nullable = false)
+    private BigDecimal amount;
 
-    @Column(name = "booking_id", nullable = false)
-    private Integer bookingId;
-
-    @Column(nullable = false)
-    private Double amount;
-
-    @Column(name = "payment_date", nullable = false)
+    @Column(name = "payment_date", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime paymentDate;
-    @PrePersist
-    public void prePersist() {
-        if (paymentDate == null) {
-            paymentDate = LocalDateTime.now(); // Set default payment date to current date
-        }
-    }
 
     @Enumerated(EnumType.STRING)
     @Column(name = "payment_method", nullable = false)
     private PaymentMethod paymentMethod;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private Status status;
+    @Column(name = "status", columnDefinition = "ENUM('PENDING', 'PAID', 'FAILED') DEFAULT 'PENDING'")
+    private PaymentStatus status;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private Users user; // Reference to the Users entity
 
-    public enum PaymentMethod {
-        CREDIT_CARD, DEBIT_CARD, CASH, ONLINE
-    }
-
-    public enum Status {
-        PENDING, PAID, FAILED
-    }
+    @ManyToOne
+    @JoinColumn(name = "booking_id", nullable = false)
+    private Bookings booking;
 
     // Getters and Setters
-
-    public Integer getPaymentId() {
+    public int getPaymentId() {
         return paymentId;
     }
 
-    public void setPaymentId(Integer paymentId) {
+    public void setPaymentId(int paymentId) {
         this.paymentId = paymentId;
     }
 
-    public Integer getBookingId() {
-        return bookingId;
+    public Bookings getBooking() {
+        return booking;
     }
 
-    public void setBookingId(Integer bookingId) {
-        this.bookingId = bookingId;
+    public void setBooking(Bookings booking) {
+        this.booking = booking;
     }
 
-    public Double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 
@@ -97,11 +96,64 @@ public class Payments {
         this.paymentMethod = paymentMethod;
     }
 
-    public Status getStatus() {
+    public PaymentStatus getStatus() {
         return status;
     }
 
-    public void setStatus(Status status) {
+    public void setStatus(PaymentStatus status) {
         this.status = status;
     }
+   
+    public Payments(int paymentId,
+			@NotNull(message = "Amount cannot be null") @DecimalMin(value = "0.01", message = "Amount must be greater than zero") BigDecimal amount,
+			LocalDateTime paymentDate, PaymentMethod paymentMethod, PaymentStatus status, Users user,
+			Bookings booking) {
+		super();
+		this.paymentId = paymentId;
+		this.amount = amount;
+		this.paymentDate = paymentDate;
+		this.paymentMethod = paymentMethod;
+		this.status = status;
+		this.user = user;
+		this.booking = booking;
+	}
+    
+
+	public Payments() {
+		super();
+	}
+
+
+	@Override
+	public String toString() {
+		return "Payments [paymentId=" + paymentId + ", amount=" + amount + ", paymentDate=" + paymentDate
+				+ ", paymentMethod=" + paymentMethod + ", status=" + status + ", user=" + user + ", booking=" + booking
+				+ "]";
+	}
+
+
+	public Users getUser() {
+		return user;
+	}
+
+	public void setUser(Users user) {
+		this.user = user;
+	}
+
+
+	// Enum for Payment Method
+    public enum PaymentMethod {
+        CREDIT_CARD,
+        DEBIT_CARD,
+        CASH,
+        ONLINE
+    }
+
+    // Enum for Payment Status
+    public enum PaymentStatus {
+        PENDING,
+        PAID,
+        FAILED
+    }
 }
+
