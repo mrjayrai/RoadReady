@@ -39,6 +39,13 @@ public class Car {
 	public Car() {
 		super();
 	}
+	
+
+	public Car(long carId) {
+		super();
+		this.carId = carId;
+	}
+
 
 	public Car(long carId, String carCompany, String carModel, int carYear, String licensePlate, String carType,
 			BigDecimal pricePerDay) {

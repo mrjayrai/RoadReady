@@ -1,22 +1,34 @@
 package com.hexaware.roadready.services;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import com.hexaware.roadready.entities.Bookings;
 import com.hexaware.roadready.entities.Payments;
+import com.hexaware.roadready.entities.Role;
+import com.hexaware.roadready.entities.Users;
+import com.hexaware.roadready.entities.Payments.PaymentMethod;
+import com.hexaware.roadready.entities.Payments.PaymentStatus;
 import com.hexaware.roadready.repositories.PaymentRepository;
 
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotNull;
+@Service
 public class PaymentServiceImp implements IPaymentService {
 	
 	@Autowired
 	PaymentRepository paymentRepository;
 
 	@Override
-	public Payments addPayment(int userId, int bookingId, double amount, String paymentMethod, String status) {
+	public Payments addPayment(Payments payment) {
 		// TODO Auto-generated method stub
-		return null;
+		return paymentRepository.save(payment);
 	}
 
 	@Override
@@ -76,7 +88,21 @@ public class PaymentServiceImp implements IPaymentService {
 	@Override
 	public List<Payments> getAllPayments() {
 		// TODO Auto-generated method stub
-		return null;
+		//return paymentRepository.findAll();
+		  List<Payments> paymentsList = paymentRepository.findAll();
+		  List<Payments> result = new ArrayList<Payments>();
+//		  
+		 // System.out.println(paymentsList);
+		  //public Users(int userId, String email, String password, String phoneNumber, Role role, LocalDateTime createdAt)
+		  for(Payments p: paymentsList) {
+			  Users user = new Users(p.getUser().getUserId(),p.getUser().getEmail(),p.getUser().getPassword(),p.getUser().getPhoneNumber(),null,null);
+//			  user.setUserId(p.getUser().getUserId());
+			  Payments payment = new Payments(p.getPaymentId(),p.getAmount(),p.getPaymentDate(),p.getPaymentMethod(),p.getStatus(),user,null);
+			  result.add(payment);
+		  }
+	        return result;
+		  
+//		  return null;
 	}
 
 }
