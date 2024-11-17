@@ -14,19 +14,19 @@ public interface IReviewsService {
     Reviews addReview(Reviews review);
 
     // Update an existing review (by reviewId)
-    Reviews updateReview(Integer reviewId, String reviewText, int rating);
+    Reviews updateReview(Reviews review);
 
     // Delete a review by its ID
-    void deleteReview(Integer reviewId);
+    void deleteReview(int reviewId);
 
     // Fetch a review by its ID
-    Optional<Reviews> getReviewById(Integer reviewId);
+    List<Reviews> getReviewById(int reviewId);
 
     // Fetch all reviews for a specific booking
-    List<Reviews> getReviewsByBookingId(Integer bookingId);
+    List<Reviews> getReviewsByBookingId(int bookingId);
 
     // Fetch all reviews made by a specific user
-    List<Reviews> getReviewsByUserId(Integer userId);
+    List<Reviews> getReviewsByUserId(int userId);
 
     // Fetch all reviews in the system (for admin use)
     List<Reviews> getAllReviews();

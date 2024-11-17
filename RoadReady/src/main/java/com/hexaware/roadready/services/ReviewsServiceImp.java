@@ -17,60 +17,64 @@ public class ReviewsServiceImp implements IReviewsService {
 	@Override
 	public Reviews addReview(Reviews review) {
 		// TODO Auto-generated method stub
-		return null;
+		return reviewRepository.save(review);
 	}
 
 	@Override
-	public Reviews updateReview(Integer reviewId, String reviewText, int rating) {
+	public Reviews updateReview(Reviews review) {
 		// TODO Auto-generated method stub
-		return null;
+		return reviewRepository.save(review);
 	}
 
 	@Override
-	public void deleteReview(Integer reviewId) {
+	public void deleteReview(int reviewId) {
 		// TODO Auto-generated method stub
+		reviewRepository.deleteByReviewId(reviewId);
 
 	}
 
 	@Override
-	public Optional<Reviews> getReviewById(Integer reviewId) {
+	public List<Reviews> getReviewById(int reviewId) {
 		// TODO Auto-generated method stub
-		return Optional.empty();
+		return reviewRepository.findByReviewId(reviewId);
 	}
 
 	@Override
-	public List<Reviews> getReviewsByBookingId(Integer bookingId) {
+	public List<Reviews> getReviewsByBookingId(int bookingId) {
 		// TODO Auto-generated method stub
-		return null;
+		return reviewRepository.findByBooking_bookingId(bookingId);
 	}
 
 	@Override
-	public List<Reviews> getReviewsByUserId(Integer userId) {
+	public List<Reviews> getReviewsByUserId(int userId) {
 		// TODO Auto-generated method stub
-		return null;
+		return reviewRepository.findByUser_userId(userId);
 	}
 
 	@Override
 	public List<Reviews> getAllReviews() {
 		// TODO Auto-generated method stub
-		return null;
+		return reviewRepository.findAll();
 	}
 
 	@Override
 	public double getAverageRatingByCarId(Integer carId) {
 		// TODO Auto-generated method stub
+		// unnecessary at the moment
 		return 0;
 	}
 
 	@Override
 	public boolean hasUserReviewedBooking(Integer userId, Integer bookingId) {
 		// TODO Auto-generated method stub
+		// unnecessary at the moment
 		return false;
 	}
 
 	@Override
 	public List<Reviews> getRecentReviews(int limit) {
 		// TODO Auto-generated method stub
+		// unnecessary at the moment
 		return null;
 	}
 
