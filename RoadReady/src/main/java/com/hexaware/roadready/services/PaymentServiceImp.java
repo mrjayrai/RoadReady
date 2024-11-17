@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 
 import com.hexaware.roadready.entities.Bookings;
@@ -25,6 +26,7 @@ public class PaymentServiceImp implements IPaymentService {
 	@Autowired
 	PaymentRepository paymentRepository;
 
+	@Modifying
 	@Override
 	public Payments addPayment(Payments payment) {
 		// TODO Auto-generated method stub
@@ -32,77 +34,72 @@ public class PaymentServiceImp implements IPaymentService {
 	}
 
 	@Override
-	public Optional<Payments> getPaymentById(int paymentId) {
+	public List<Payments> getPaymentById(int paymentId) {
 		// TODO Auto-generated method stub
-		return Optional.empty();
+		return paymentRepository.findByPaymentId(paymentId);
 	}
 
 	@Override
 	public List<Payments> getPaymentsByUserId(int userId) {
 		// TODO Auto-generated method stub
-		return null;
+		return paymentRepository.findByUser_UserId(userId);
 	}
 
 	@Override
 	public List<Payments> getPaymentHistoryByBookingId(int bookingId) {
 		// TODO Auto-generated method stub
+		// Unncessary
 		return null;
 	}
 
 	@Override
 	public boolean savePaymentMethod(int userId, String paymentDetails) {
 		// TODO Auto-generated method stub
+		// Unnecessary
 		return false;
 	}
 
 	@Override
 	public boolean issueRefund(int paymentId, double refundAmount) {
 		// TODO Auto-generated method stub
+		// unnecessary
 		return false;
 	}
 
 	@Override
 	public boolean validatePaymentDetails(String paymentDetails) {
 		// TODO Auto-generated method stub
+		// Validation not API
 		return false;
 	}
-
+	
+	@Modifying
 	@Override
-	public boolean updatePaymentStatus(Integer paymentId, String status) {
+	public boolean updatePaymentStatus(Integer paymentId, PaymentStatus status) {
 		// TODO Auto-generated method stub
-		return false;
+		int row =  paymentRepository.updatePaymentStatus(paymentId, status);
+		return row>0;
 	}
 
 	@Override
 	public Double getTotalAmountPaid(Integer bookingId) {
 		// TODO Auto-generated method stub
+		// unneccesary
 		return null;
 	}
 
 	@Override
-	public boolean isPaymentCompleted(Integer bookingId) {
+	public boolean isPaymentCompleted(int bookingId) {
 		// TODO Auto-generated method stub
-		return false;
+		
+		return paymentRepository.existsByStatusAndBooking_BookingId( PaymentStatus.PAID,bookingId);
 	}
 
 	@Override
 	public List<Payments> getAllPayments() {
 		// TODO Auto-generated method stub
-		//return paymentRepository.findAll();
-		  List<Payments> paymentsList = paymentRepository.findAll();
-		  List<Payments> result = new ArrayList<Payments>();
-//		  
-		 // System.out.println(paymentsList);
-		  //public Users(int userId, String email, String password, String phoneNumber, Role role, LocalDateTime createdAt)
-		  for(Payments p: paymentsList) {
-			  Users user = new Users(p.getUser().getUserId(),p.getUser().getEmail(),p.getUser().getPassword(),p.getUser().getPhoneNumber(),null,null);
-//			  user.setUserId(p.getUser().getUserId());
-			  Payments payment = new Payments(p.getPaymentId(),p.getAmount(),p.getPaymentDate(),p.getPaymentMethod(),p.getStatus(),user,null);
-			  result.add(payment);
-		  }
-	        return result;
-		  
-//		  return null;
+		
+		  return paymentRepository.findAll();
 	}
 
 }
