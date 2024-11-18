@@ -35,46 +35,52 @@ public class ReviewsRestController {
 	
 	@GetMapping("/review/{reviewId}")
 	private Reviews getReviewById(@PathVariable int reviewId){
-		Reviews review= null;
-		review=reviewService.getReviewById(reviewId);
-		if(review != null) {
-			return review;
-		}
-		else {
-			throw new NullPointerException();
-		}
-	}
-	@ExceptionHandler(NullPointerException.class)
-	@ResponseStatus(reason="Reviews not Found for the particular Id",code=HttpStatus.BAD_REQUEST)
-	
-	public void handleExp1() {//alternate of catch block
+//		Reviews review= null;
+//		review=reviewService.getReviewById(reviewId);
+//		if(review != null) {
+//			return review;
+//		}
+//		else {
+//			throw new NullPointerException();
+//		}
+		return reviewService.getReviewById(reviewId);
 		
 	}
-	
+//	@ExceptionHandler(NullPointerException.class)
+//	@ResponseStatus(reason="Reviews not Found for the particular Id",code=HttpStatus.BAD_REQUEST)
+//	
+//	public void handleExp1() {//alternate of catch block
+//		
+//	}
+//	
 	@GetMapping("/review/booking/{bookingId}")
 	private List<Reviews> getReviewByBookingId(@PathVariable int bookingId){
-		List<Reviews> review=new ArrayList<Reviews>();
-		review=reviewService.getReviewsByBookingId(bookingId);
-		if(review.size()!=0) {
-			return review;
-			
-		}
-		else {
-			throw new NullPointerException();
-		}
+//		List<Reviews> review=new ArrayList<Reviews>();
+//		review=reviewService.getReviewsByBookingId(bookingId);
+//		if(review.size()!=0) {
+//			return review;
+//			
+//		}
+//		else {
+//			throw new NullPointerException();
+//		}
+		return reviewService.getReviewsByBookingId(bookingId);
+		
 	}
 	
 	@GetMapping("/review/user/{userId}")
 	private List<Reviews> getReviewByUserId(@PathVariable int userId){
-		List<Reviews> review=new ArrayList<Reviews>();
-		review=reviewService.getReviewsByUserId(userId);
-		if(review.size()!=0) {
-			return review;
-			
-		}
-		else {
-			throw new NullPointerException();
-		}
+//		List<Reviews> review=new ArrayList<Reviews>();
+//		review=reviewService.getReviewsByUserId(userId);
+//		if(review.size()!=0) {
+//			return review;
+//			
+//		}
+//		else {
+//			throw new NullPointerException();
+//		}
+		return reviewService.getReviewsByUserId(userId);
+		
 	}
 	
 	@PostMapping("/add")
