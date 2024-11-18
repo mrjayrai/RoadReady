@@ -1,0 +1,606 @@
+[INFO]  :  Starting RoadReadyApplication using Java 21.0.4 with PID 8636 (E:\FSD_WITH_ANGULAR\RoadReady\target\classes started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 84 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  Tomcat initialized with port 8080 (http)
+[INFO]  :  Starting service [Tomcat]
+[INFO]  :  Starting Servlet engine: [Apache Tomcat/10.1.31]
+[INFO]  :  Initializing Spring embedded WebApplicationContext
+[INFO]  :  Root WebApplicationContext: initialization completed in 2238 ms
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@236a4d30
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000182: No default (no-argument) constructor for class: com.hexaware.roadready.entities.Payments (class must be instantiated by Interceptor)
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Tomcat started on port 8080 (http) with context path '/'
+[INFO]  :  Started RoadReadyApplication in 6.82 seconds (process running for 8.068)
+[INFO]  :  Starting PaymentServiceImpTest using Java 21.0.4 with PID 1464 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 104 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@420b55ed
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000182: No default (no-argument) constructor for class: com.hexaware.roadready.entities.Payments (class must be instantiated by Interceptor)
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started PaymentServiceImpTest in 8.415 seconds (process running for 10.04)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting PaymentServiceImpTest using Java 21.0.4 with PID 9336 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 112 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@42edde25
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000182: No default (no-argument) constructor for class: com.hexaware.roadready.entities.Payments (class must be instantiated by Interceptor)
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started PaymentServiceImpTest in 8.998 seconds (process running for 10.51)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting PaymentServiceImpTest using Java 21.0.4 with PID 3720 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 103 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@77d95e5a
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000182: No default (no-argument) constructor for class: com.hexaware.roadready.entities.Payments (class must be instantiated by Interceptor)
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started PaymentServiceImpTest in 10.366 seconds (process running for 11.899)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Application shutdown requested.
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting PaymentServiceImpTest using Java 21.0.4 with PID 7224 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 106 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@42edde25
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000182: No default (no-argument) constructor for class: com.hexaware.roadready.entities.Payments (class must be instantiated by Interceptor)
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started PaymentServiceImpTest in 9.142 seconds (process running for 10.737)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting RoadReadyApplication using Java 21.0.4 with PID 10100 (E:\FSD_WITH_ANGULAR\RoadReady\target\classes started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 65 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  Tomcat initialized with port 8080 (http)
+[INFO]  :  Starting service [Tomcat]
+[INFO]  :  Starting Servlet engine: [Apache Tomcat/10.1.31]
+[INFO]  :  Initializing Spring embedded WebApplicationContext
+[INFO]  :  Root WebApplicationContext: initialization completed in 1673 ms
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6d7e2795
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000182: No default (no-argument) constructor for class: com.hexaware.roadready.entities.Payments (class must be instantiated by Interceptor)
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Tomcat started on port 8080 (http) with context path '/'
+[INFO]  :  Started RoadReadyApplication in 6.007 seconds (process running for 6.771)
+[INFO]  :  Initializing Spring DispatcherServlet 'dispatcherServlet'
+[INFO]  :  Initializing Servlet 'dispatcherServlet'
+[INFO]  :  Completed initialization in 5 ms
+[INFO]  :  Init duration for springdoc-openapi is: 1462 ms
+[INFO]  :  Application shutdown requested.
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting RoadReadyApplication using Java 21.0.4 with PID 4292 (E:\FSD_WITH_ANGULAR\RoadReady\target\classes started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 66 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  Tomcat initialized with port 8080 (http)
+[INFO]  :  Starting service [Tomcat]
+[INFO]  :  Starting Servlet engine: [Apache Tomcat/10.1.31]
+[INFO]  :  Initializing Spring embedded WebApplicationContext
+[INFO]  :  Root WebApplicationContext: initialization completed in 1746 ms
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6c36051c
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Tomcat started on port 8080 (http) with context path '/'
+[INFO]  :  Started RoadReadyApplication in 6.228 seconds (process running for 7.126)
+[INFO]  :  Starting PaymentServiceImpTest using Java 21.0.4 with PID 9752 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 108 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6339e604
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started PaymentServiceImpTest in 8.456 seconds (process running for 9.975)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Application shutdown requested.
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting PaymentServiceImpTest using Java 21.0.4 with PID 9332 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 101 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@77d95e5a
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started PaymentServiceImpTest in 9.355 seconds (process running for 10.847)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting PaymentServiceImpTest using Java 21.0.4 with PID 9808 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 112 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6c1f15df
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started PaymentServiceImpTest in 8.214 seconds (process running for 9.638)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting PaymentServiceImpTest using Java 21.0.4 with PID 2412 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 108 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@45311a99
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started PaymentServiceImpTest in 9.022 seconds (process running for 10.436)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting PaymentServiceImpTest using Java 21.0.4 with PID 6936 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 163 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@e7e455d
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started PaymentServiceImpTest in 8.217 seconds (process running for 9.832)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting ReviewsServiceImpTest using Java 21.0.4 with PID 6836 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 107 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6fe5da76
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started ReviewsServiceImpTest in 8.469 seconds (process running for 9.91)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting ReviewsServiceImpTest using Java 21.0.4 with PID 4616 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 94 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@42edde25
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started ReviewsServiceImpTest in 8.194 seconds (process running for 9.596)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting ReviewsServiceImpTest using Java 21.0.4 with PID 820 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 106 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@e7e455d
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started ReviewsServiceImpTest in 8.145 seconds (process running for 9.566)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting ReviewsServiceImpTest using Java 21.0.4 with PID 964 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 94 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@e7e455d
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started ReviewsServiceImpTest in 8.554 seconds (process running for 9.935)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting ReviewsServiceImpTest using Java 21.0.4 with PID 9300 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 93 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6fe5da76
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started ReviewsServiceImpTest in 8.286 seconds (process running for 9.665)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting PaymentServiceImpTest using Java 21.0.4 with PID 5712 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 108 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@e7e455d
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started PaymentServiceImpTest in 8.197 seconds (process running for 9.594)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting PaymentServiceImpTest using Java 21.0.4 with PID 9744 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 104 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6fe5da76
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started PaymentServiceImpTest in 8.296 seconds (process running for 9.699)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting PaymentServiceImpTest using Java 21.0.4 with PID 8360 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 97 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@e7e455d
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started PaymentServiceImpTest in 8.457 seconds (process running for 9.963)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting PaymentServiceImpTest using Java 21.0.4 with PID 10188 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 89 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6fe5da76
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started PaymentServiceImpTest in 8.376 seconds (process running for 9.867)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting CarServiceImplTest using Java 21.0.4 with PID 6408 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 103 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@10f8e2d2
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started CarServiceImplTest in 8.205 seconds (process running for 9.61)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting CarServiceImplTest using Java 21.0.4 with PID 8508 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 112 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6c1f15df
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started CarServiceImplTest in 8.53 seconds (process running for 9.934)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting CarServiceImplTest using Java 21.0.4 with PID 5132 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 104 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@10f8e2d2
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started CarServiceImplTest in 8.303 seconds (process running for 9.854)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.
+[INFO]  :  Starting RoleServiceImplTest using Java 21.0.4 with PID 9892 (started by God in E:\FSD_WITH_ANGULAR\RoadReady)
+[INFO]  :  No active profile set, falling back to 1 default profile: "default"
+[INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[INFO]  :  Finished Spring Data repository scanning in 109 ms. Found 6 JPA repository interfaces.
+[WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+[INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
+[INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
+[INFO]  :  HHH000026: Second-level cache disabled
+[INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
+[INFO]  :  HikariPool-1 - Starting...
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@e7e455d
+[INFO]  :  HikariPool-1 - Start completed.
+[WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+[WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+[INFO]  :  HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[INFO]  :  Initialized JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  Hibernate is in classpath; If applicable, HQL parser will be used.
+[WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[INFO]  :  Started RoleServiceImplTest in 8.466 seconds (process running for 9.813)
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.

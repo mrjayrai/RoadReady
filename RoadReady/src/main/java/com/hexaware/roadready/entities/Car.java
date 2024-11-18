@@ -72,7 +72,7 @@ public class Car {
 	}
 
 
-	public Car(long carId, String carCompany, String carModel, int carYear, String licensePlate, String carType,
+	public Car(long carId, String carCompany, String carModel, String licensePlate, int carYear, String carType,
 			BigDecimal pricePerDay) {
 		super();
 		this.carId = carId;

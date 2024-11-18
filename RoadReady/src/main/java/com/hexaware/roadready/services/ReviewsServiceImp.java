@@ -1,8 +1,14 @@
 package com.hexaware.roadready.services;
-
+/*
+ * Author : Rajeshwari
+ * Description : Service Implementation for Reviews
+ * Date: 17-11-2024
+ */
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,22 +20,26 @@ public class ReviewsServiceImp implements IReviewsService {
 	
 	@Autowired
 	ReviewsRepository reviewRepository;
+	Logger logger =	   LoggerFactory.getLogger(ReviewsServiceImp.class);
 
 	@Override
 	public Reviews addReview(Reviews review) {
 		// TODO Auto-generated method stub
+		logger.info("New Review Details added");
 		return reviewRepository.save(review);
 	}
 
 	@Override
 	public Reviews updateReview(Reviews review) {
 		// TODO Auto-generated method stub
+		logger.info("Review Details Updated");
 		return reviewRepository.save(review);
 	}
 
 	@Override
 	public void deleteReview(int reviewId) {
 		// TODO Auto-generated method stub
+		logger.error("Review details deleted");
 		reviewRepository.deleteByReviewId(reviewId);
 
 	}
@@ -37,14 +47,21 @@ public class ReviewsServiceImp implements IReviewsService {
 	@Override
 	public Reviews getReviewById(int reviewId) {
 		// TODO Auto-generated method stub
-		
-		return reviewRepository.findByReviewId(reviewId);
+		Reviews review=reviewRepository.findByReviewId(reviewId);
+		logger.info("Review get by review Id");
+		if(review != null) {
+			return review;
+		}
+		else {
+			throw new NotFoundException("No Review found for reviewId: " + reviewId);
+		}
 	}
 
 	@Override
 	public List<Reviews> getReviewsByBookingId(int bookingId) {
 		// TODO Auto-generated method stub
 		List<Reviews> review = reviewRepository.findByBooking_bookingId(bookingId);
+		logger.info("Review get by booking Id");
 		if(review.isEmpty()) {
 			throw new NotFoundException("No Review found for booking: " + bookingId);
 		}
@@ -54,12 +71,18 @@ public class ReviewsServiceImp implements IReviewsService {
 	@Override
 	public List<Reviews> getReviewsByUserId(int userId) {
 		// TODO Auto-generated method stub
-		return reviewRepository.findByUser_userId(userId);
+		logger.info("Review get by user Id");
+		List<Reviews> review = reviewRepository.findByUser_userId(userId);
+		if(review.isEmpty()) {
+			throw new NotFoundException("No Review found for User: " + userId);
+		}
+		return review;
 	}
 
 	@Override
 	public List<Reviews> getAllReviews() {
 		// TODO Auto-generated method stub
+		logger.info("All review details received");
 		return reviewRepository.findAll();
 	}
 
