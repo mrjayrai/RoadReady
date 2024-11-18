@@ -44,14 +44,12 @@ public class Reviews{
     
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-//    @NotNull(message = "User ID is required.")
-//    @Positive(message = "User ID must be positive.")
+    @NotNull(message = "User ID is required.")
     private Users user;
 
     @ManyToOne
     @JoinColumn(name = "booking_id", nullable = false)
-//    @NotNull(message = "Booking ID is required.")
-//    @Positive(message = "Booking ID must be positive.")
+    @NotNull(message = "Booking ID is required.")
     private Bookings booking;
 
     // Getters and Setters

@@ -84,7 +84,7 @@ public class ReviewsRestController {
 	}
 	
 	@PostMapping("/add")
-	private Reviews addReview( @RequestBody @Valid Reviews review) {
+	private Reviews addReview(@Valid @RequestBody Reviews review) {
 		return reviewService.addReview(review);
 	}
 	

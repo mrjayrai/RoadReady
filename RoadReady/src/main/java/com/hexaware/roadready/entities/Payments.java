@@ -42,22 +42,22 @@ public class Payments {
     @Enumerated(EnumType.STRING)
     @Column(name = "payment_method", nullable = false)
     @NotNull(message = "Payment method is required.")
-//    @Pattern(regexp = "^(CASH|CREDIT_CARD|DEBIT_CARD|ONLINE)$", message = "Paymentmethod must be CASH, CREDIT_CARD, DEBIT_CARD, ONLINE.")
+    @Pattern(regexp = "^(CASH|CREDIT_CARD|DEBIT_CARD|ONLINE)$", message = "Paymentmethod must be CASH, CREDIT_CARD, DEBIT_CARD, ONLINE.")
     private PaymentMethod paymentMethod;
 
     @Enumerated(EnumType.STRING)
-//    @Pattern(regexp = "^(PENDING|PAID|FAILED)$", message = "Status must be PENDING, PAID, or FAILED.")
+    @Pattern(regexp = "^(PENDING|PAID|FAILED)$", message = "Status must be PENDING, PAID, or FAILED.")
     @Column(name = "status", columnDefinition = "ENUM('PENDING', 'PAID', 'FAILED') DEFAULT 'PENDING'")
     private PaymentStatus status;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false)
-//    @NotNull(message = "User ID is required.")
+    @NotNull(message = "User ID is required.")
     private Users user; // Reference to the Users entity
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "booking_id", nullable = false)
-//    @NotNull(message = "Booking ID is required.")
+    @NotNull(message = "Booking ID is required.")
     private Bookings booking; // Reference to the Bookings entity
 
     // Getters and Setters
