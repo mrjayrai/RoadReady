@@ -20,7 +20,7 @@ public interface IReviewsService {
     void deleteReview(int reviewId);
 
     // Fetch a review by its ID
-    List<Reviews> getReviewById(int reviewId);
+    Reviews getReviewById(int reviewId);
 
     // Fetch all reviews for a specific booking
     List<Reviews> getReviewsByBookingId(int bookingId);
@@ -31,12 +31,4 @@ public interface IReviewsService {
     // Fetch all reviews in the system (for admin use)
     List<Reviews> getAllReviews();
 
-    // Fetch average rating for a specific car (if linked via bookingId)
-    double getAverageRatingByCarId(Integer carId);
-
-    // Check if a user has already reviewed a booking
-    boolean hasUserReviewedBooking(Integer userId, Integer bookingId);
-
-    // Fetch top N recent reviews
-    List<Reviews> getRecentReviews(int limit);
 }

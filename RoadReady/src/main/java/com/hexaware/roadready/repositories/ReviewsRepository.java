@@ -20,7 +20,7 @@ public interface ReviewsRepository extends JpaRepository<Reviews,Integer>  {
 	@Transactional
 	void deleteByReviewId(int reviewId);
 	
-	List<Reviews> findByReviewId(int reviewId);
+	Reviews findByReviewId(int reviewId);
 	
 	List<Reviews> findByBooking_bookingId(int bookingId);
 	

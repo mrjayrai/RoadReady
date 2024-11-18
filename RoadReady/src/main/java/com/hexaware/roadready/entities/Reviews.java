@@ -24,6 +24,7 @@ import jakarta.validation.constraints.Size;
 public class Reviews{
 
     @Id
+    @Min(value=1,message="ID SHOULD BE POSITIVE")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "review_id")
     private int reviewId;

@@ -34,7 +34,7 @@ public class PaymentServiceImp implements IPaymentService {
 	}
 
 	@Override
-	public List<Payments> getPaymentById(int paymentId) {
+	public Payments getPaymentById(int paymentId) {
 		// TODO Auto-generated method stub
 		return paymentRepository.findByPaymentId(paymentId);
 	}
@@ -43,34 +43,6 @@ public class PaymentServiceImp implements IPaymentService {
 	public List<Payments> getPaymentsByUserId(int userId) {
 		// TODO Auto-generated method stub
 		return paymentRepository.findByUser_UserId(userId);
-	}
-
-	@Override
-	public List<Payments> getPaymentHistoryByBookingId(int bookingId) {
-		// TODO Auto-generated method stub
-		// Unncessary
-		return null;
-	}
-
-	@Override
-	public boolean savePaymentMethod(int userId, String paymentDetails) {
-		// TODO Auto-generated method stub
-		// Unnecessary
-		return false;
-	}
-
-	@Override
-	public boolean issueRefund(int paymentId, double refundAmount) {
-		// TODO Auto-generated method stub
-		// unnecessary
-		return false;
-	}
-
-	@Override
-	public boolean validatePaymentDetails(String paymentDetails) {
-		// TODO Auto-generated method stub
-		// Validation not API
-		return false;
 	}
 	
 	@Modifying
@@ -81,18 +53,12 @@ public class PaymentServiceImp implements IPaymentService {
 		return row>0;
 	}
 
-	@Override
-	public Double getTotalAmountPaid(Integer bookingId) {
-		// TODO Auto-generated method stub
-		// unneccesary
-		return null;
-	}
 
 	@Override
-	public boolean isPaymentCompleted(int bookingId) {
+	public boolean isPaymentCompleted(int paymentId) {
 		// TODO Auto-generated method stub
 		
-		return paymentRepository.existsByStatusAndBooking_BookingId( PaymentStatus.PAID,bookingId);
+		return paymentRepository.existsByStatusAndBooking_BookingId( PaymentStatus.PAID,paymentId);
 	}
 
 	@Override
@@ -100,6 +66,15 @@ public class PaymentServiceImp implements IPaymentService {
 		// TODO Auto-generated method stub
 		
 		  return paymentRepository.findAll();
+	}
+
+	@Override
+	public String paymentStatus(int paymentId) {
+		// TODO Auto-generated method stub
+		if(paymentId<0) {
+			return "Enter valid paymentId";
+		}
+		return paymentRepository.findPaymentStatusByPaymentId(paymentId);
 	}
 
 }

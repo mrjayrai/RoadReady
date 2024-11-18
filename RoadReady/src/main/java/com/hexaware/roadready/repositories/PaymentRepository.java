@@ -26,11 +26,14 @@ public interface PaymentRepository extends JpaRepository<Payments,Integer> {
     @Query("UPDATE Payments p SET p.status = :status WHERE p.paymentId = :paymentId")
     int updatePaymentStatus(@Param("paymentId") int paymentId, @Param("status") PaymentStatus status);
 	
-	List<Payments> findByPaymentId(int paymentId);
+	Payments findByPaymentId(int paymentId);
 	
 	List<Payments> findByUser_UserId(int userId);
 	
-	boolean existsByStatusAndBooking_BookingId(Payments.PaymentStatus status,int bookingId);
+	boolean existsByStatusAndBooking_BookingId(Payments.PaymentStatus status,int paymentId);
 	
+	
+	@Query("SELECT p.status from Payments p where p.paymentId=?1")
+	String findPaymentStatusByPaymentId(int paymentId);
 	
 }
