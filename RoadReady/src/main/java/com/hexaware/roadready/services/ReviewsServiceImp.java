@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hexaware.roadready.entities.Reviews;
+import com.hexaware.roadready.exceptions.NotFoundException;
 import com.hexaware.roadready.repositories.ReviewsRepository;
 @Service
 public class ReviewsServiceImp implements IReviewsService {
@@ -43,7 +44,11 @@ public class ReviewsServiceImp implements IReviewsService {
 	@Override
 	public List<Reviews> getReviewsByBookingId(int bookingId) {
 		// TODO Auto-generated method stub
-		return reviewRepository.findByBooking_bookingId(bookingId);
+		List<Reviews> review = reviewRepository.findByBooking_bookingId(bookingId);
+		if(review.isEmpty()) {
+			throw new NotFoundException("No Review found for booking: " + bookingId);
+		}
+		return review;
 	}
 
 	@Override

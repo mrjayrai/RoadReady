@@ -14,6 +14,7 @@ import com.hexaware.roadready.entities.Bookings;
 import com.hexaware.roadready.entities.Payments;
 import com.hexaware.roadready.entities.Role;
 import com.hexaware.roadready.entities.Users;
+import com.hexaware.roadready.exceptions.NotFoundException;
 import com.hexaware.roadready.entities.Payments.PaymentMethod;
 import com.hexaware.roadready.entities.Payments.PaymentStatus;
 import com.hexaware.roadready.repositories.PaymentRepository;
@@ -42,7 +43,11 @@ public class PaymentServiceImp implements IPaymentService {
 	@Override
 	public List<Payments> getPaymentsByUserId(int userId) {
 		// TODO Auto-generated method stub
-		return paymentRepository.findByUser_UserId(userId);
+		List<Payments> payments= paymentRepository.findByUser_UserId(userId);
+		if(payments.isEmpty()) {
+			throw  new NotFoundException("No Payments found for userId: " + userId);
+		}
+		return payments;
 	}
 	
 	@Modifying
