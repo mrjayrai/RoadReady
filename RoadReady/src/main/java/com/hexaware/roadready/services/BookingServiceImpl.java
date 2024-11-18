@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hexaware.roadready.entities.Bookings;
+import com.hexaware.roadready.exceptions.NotFoundException;
 import com.hexaware.roadready.repositories.BookingsRepository;
 import com.hexaware.roadready.repositories.ReviewsRepository;
 
@@ -21,7 +22,11 @@ public class BookingServiceImpl implements IBookingService {
 	@Override
 	public List<Bookings> getBookingById(int bookingId) {
 		// TODO Auto-generated method stub
-		return bookingRepo.findByBookingId(bookingId);
+		List<Bookings> bookings = bookingRepo.findByBookingId(bookingId);
+		if(bookings.isEmpty()) {
+			throw new NotFoundException("No booking found for Booking ID: " + bookingId);
+		}
+		return bookings;
 	}
 
 	@Override

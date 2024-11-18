@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 
 import com.hexaware.roadready.entities.Car;
+import com.hexaware.roadready.exceptions.NotFoundException;
 import com.hexaware.roadready.repositories.CarRepository;
 
 @Service
@@ -37,7 +38,12 @@ public class CarServiceImpl implements ICarService {
 	@Override
 	public List<Car> findCarsByModel(String carModel) {
 		// TODO Auto-generated method stub
-		return carRepository.findByCarModel(carModel);
+//		return carRepository.findByCarModel(carModel);
+		List<Car> cars = carRepository.findByCarModel(carModel);
+        if (cars.isEmpty()) {
+            throw new NotFoundException("No cars found for model: " + carModel);
+        }
+        return cars;
 	}
 
 	@Override
