@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hexaware.roadready.entities.Bookings;
 import com.hexaware.roadready.services.IBookingService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/booking/")
 public class BookingRestController {
@@ -43,7 +45,7 @@ public class BookingRestController {
 	}
 	
 	@PostMapping("add")
-	private Bookings addBooking(@RequestBody Bookings booking) {
+	private Bookings addBooking(@Valid @RequestBody Bookings booking) {
 		return service.createBooking(booking);
 	}
 

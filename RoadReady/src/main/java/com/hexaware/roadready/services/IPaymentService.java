@@ -21,8 +21,6 @@ public interface IPaymentService {
     // Method to fetch all payments made by a specific user
     List<Payments> getPaymentsByUserId(int userId) throws NullPointerException;
 
-    // Method to get payment history for a specific booking
-//    List<Payments> getPaymentHistoryByBookingId(int bookingId);
 
     // Update the payment status (e.g., mark as PAID, FAILED)
     boolean updatePaymentStatus(Integer paymentId, PaymentStatus status);
