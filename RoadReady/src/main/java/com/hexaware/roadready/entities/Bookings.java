@@ -1,8 +1,21 @@
 package com.hexaware.roadready.entities;
 
-import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.FutureOrPresent;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 
 @Entity
 @Table(name = "bookings")
@@ -15,21 +28,31 @@ public class Bookings {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
+    @NotNull(message = "User is required.")
     private Users user;
 
     @ManyToOne
     @JoinColumn(name = "car_id", nullable = false)
+    @NotNull(message = "Car is required.")
     private Car car;
 
     @Column(name = "start_date", nullable = false)
+    @NotNull(message = "Start date is required.")
+    @FutureOrPresent(message = "Start date must be today or in the future.")
     private LocalDate startDate;
 
     @Column(name = "end_date", nullable = false)
+    @NotNull(message = "End date is required.")
+    @Future(message = "End date must be in the future.")
     private LocalDate endDate;
 
     @Column(name = "total_price", nullable = false)
+    @NotNull(message = "Total price is required.")
+    @DecimalMin(value = "0.01", message = "Total price must be greater than zero.")
     private BigDecimal totalPrice;
 
+    @NotNull(message = "Status is required.")
+    @Pattern(regexp = "^(PENDING|CONFIRMED|CANCELLED)$", message = "Status must be PENDING, CONFIRMED, or CANCELLED.")
     @Column(name = "status", nullable = false)
     private String status;
 

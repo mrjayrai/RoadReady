@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.hexaware.roadready.entities.Users;
+import com.hexaware.roadready.exceptions.NotFoundException;
 import com.hexaware.roadready.repositories.UsersRepository;
 
 
@@ -23,7 +24,8 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public List<Users> getUserById(int userId) {
 		// TODO Auto-generated method stub
-		return userRepo.findByUserId(userId);
+	return userRepo.findByUserId(userId);
+//		return userRepo.findById(userId).orElseThrow(()-> new NotFoundException("User with ID " + userId + " not found"));
 	}
 
 	@Override

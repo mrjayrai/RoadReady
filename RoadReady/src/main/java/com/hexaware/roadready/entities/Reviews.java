@@ -17,6 +17,7 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -24,7 +25,6 @@ import jakarta.validation.constraints.Size;
 public class Reviews{
 
     @Id
-    @Min(value=1,message="ID SHOULD BE POSITIVE")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "review_id")
     private int reviewId;
@@ -41,12 +41,15 @@ public class Reviews{
 
     @Column(name = "review_date", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private LocalDateTime reviewDate;
+    
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
+    @NotNull(message = "User ID is required.")
     private Users user;
 
     @ManyToOne
     @JoinColumn(name = "booking_id", nullable = false)
+    @NotNull(message = "Booking ID is required.")
     private Bookings booking;
 
     // Getters and Setters
