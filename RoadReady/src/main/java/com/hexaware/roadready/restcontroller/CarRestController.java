@@ -18,6 +18,8 @@ import com.hexaware.roadready.entities.Car;
 import com.hexaware.roadready.entities.CarAvailabilityRequest;
 import com.hexaware.roadready.services.ICarService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/cars/")
 public class CarRestController {
@@ -52,7 +54,7 @@ public class CarRestController {
 	}
 	
 	@PostMapping("add")
-	private ResponseEntity<Car> addCar( @RequestBody Car car) {
+	private ResponseEntity<Car> addCar( @RequestBody @Valid Car car) {
 		 Car savedCar = carService.addCar(car);
 	        return ResponseEntity.ok(savedCar);
 	}
@@ -69,7 +71,7 @@ public class CarRestController {
 	}
 	
 	@PutMapping("update")
-	private Car updateCar(@RequestBody Car car) {
+	private Car updateCar(@RequestBody @Valid Car car) {
 		return carService.updateCar(car.getCarId(), car);
 	}
 

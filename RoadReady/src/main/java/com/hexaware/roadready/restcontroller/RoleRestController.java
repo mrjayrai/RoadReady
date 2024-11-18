@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hexaware.roadready.entities.Role;
 import com.hexaware.roadready.services.IRoleService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/roles/")
 public class RoleRestController {
@@ -33,12 +35,12 @@ public class RoleRestController {
 	}
 	
 	@PostMapping("add")
-	private Role addRole(@RequestBody Role role) {
+	private Role addRole(@RequestBody @Valid Role role) {
 		return service.addRole(role);
 	}
 	
 	@PutMapping("update")
-	private Role updateRole(@RequestBody Role role) {
+	private Role updateRole(@RequestBody @Valid Role role) {
 		return service.updateRole(role);
 	}
 	
