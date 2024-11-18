@@ -2,6 +2,7 @@ package com.hexaware.roadready.entities;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -15,12 +16,14 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.validation.constraints.Min;
 
 @Entity
 @Table(name = "payments")
 public class Payments {
 
     @Id
+    @Min(value=1)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "payment_id")
     private int paymentId;
