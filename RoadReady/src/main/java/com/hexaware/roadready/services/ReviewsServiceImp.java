@@ -34,8 +34,9 @@ public class ReviewsServiceImp implements IReviewsService {
 	}
 
 	@Override
-	public List<Reviews> getReviewById(int reviewId) {
+	public Reviews getReviewById(int reviewId) {
 		// TODO Auto-generated method stub
+		
 		return reviewRepository.findByReviewId(reviewId);
 	}
 
@@ -57,25 +58,6 @@ public class ReviewsServiceImp implements IReviewsService {
 		return reviewRepository.findAll();
 	}
 
-	@Override
-	public double getAverageRatingByCarId(Integer carId) {
-		// TODO Auto-generated method stub
-		// unnecessary at the moment
-		return 0;
-	}
 
-	@Override
-	public boolean hasUserReviewedBooking(Integer userId, Integer bookingId) {
-		// TODO Auto-generated method stub
-		// unnecessary at the moment
-		return false;
-	}
-
-	@Override
-	public List<Reviews> getRecentReviews(int limit) {
-		// TODO Auto-generated method stub
-		// unnecessary at the moment
-		return null;
-	}
 
 }

@@ -1,5 +1,6 @@
 package com.hexaware.roadready.restcontroller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,13 +37,22 @@ public class PaymentRestController {
 	}
 	
 	@GetMapping("/payment/{paymentId}")
-	private List<Payments> getPaymentById(@PathVariable int paymentId){
-		return paymentService.getPaymentById(paymentId);
+	private Payments getPaymentById(@PathVariable int paymentId){
+		Payments payment=null;
+		payment=paymentService.getPaymentById(paymentId);
+		if(payment!=null) {
+			return payment;
+		}
+		else {
+			throw new NullPointerException();
+		}
 	}
 	
 	@GetMapping("/user/{userId}")
 	private List<Payments> getPaymentByUserId(@PathVariable int userId){
-		return paymentService.getPaymentsByUserId(userId);
+		List<Payments> payment=new ArrayList<Payments>();
+		payment=paymentService.getPaymentsByUserId(userId);
+		return payment;
 	}
 	
 	@GetMapping("/paymentstatus/{paymentId}")
@@ -51,10 +61,23 @@ public class PaymentRestController {
 	}
 	
 	@PutMapping("/updatepayment/{paymentId}/{paymentStatus}")
-	private boolean updatePaymentStatus(@PathVariable int paymentId,@PathVariable String paymentStatus) {
+	private boolean updatePaymentStatus(@Valid @PathVariable int paymentId,@PathVariable String paymentStatus) {
 		Payments.PaymentStatus status = Payments.PaymentStatus.valueOf(paymentStatus);
-		return paymentService.updatePaymentStatus(paymentId, status);
+		boolean updateStatus= paymentService.updatePaymentStatus(paymentId, status);
+		if(updateStatus) {
+			return updateStatus;
+		}
+		else {
+			throw new RuntimeException();
+		}
 		
 	}
+	
+	@GetMapping("/getPaymentStatus/{paymentId}")
+	public String getPaymentStatus(@PathVariable int paymentId) {
+		return paymentService.paymentStatus(paymentId);
+		
+	}
+	
 
 }

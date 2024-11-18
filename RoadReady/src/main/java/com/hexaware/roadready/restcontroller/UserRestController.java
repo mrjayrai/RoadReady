@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hexaware.roadready.entities.Users;
 import com.hexaware.roadready.services.IUserService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/users/")
 public class UserRestController {
@@ -33,12 +35,12 @@ public class UserRestController {
 	}
 	
 	@PostMapping("add")
-	private Users addUser(@RequestBody Users user) {
+	private Users addUser(@RequestBody @Valid Users user) {
 		return service.addUser(user);
 	}
 	
 	@PutMapping("update")
-	private Users updateUser(@RequestBody Users updateUser) {
+	private Users updateUser(@RequestBody @Valid Users updateUser) {
 		return service.updateUser(updateUser);
 	}
 	
