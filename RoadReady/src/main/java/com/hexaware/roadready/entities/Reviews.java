@@ -25,7 +25,6 @@ import jakarta.validation.constraints.Size;
 public class Reviews{
 
     @Id
-    @Min(value=1,message="ID SHOULD BE POSITIVE")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "review_id")
     private int reviewId;
@@ -45,14 +44,14 @@ public class Reviews{
     
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
-    @NotNull(message = "User ID is required.")
-    @Positive(message = "User ID must be positive.")
+//    @NotNull(message = "User ID is required.")
+//    @Positive(message = "User ID must be positive.")
     private Users user;
 
     @ManyToOne
     @JoinColumn(name = "booking_id", nullable = false)
-    @NotNull(message = "Booking ID is required.")
-    @Positive(message = "Booking ID must be positive.")
+//    @NotNull(message = "Booking ID is required.")
+//    @Positive(message = "Booking ID must be positive.")
     private Bookings booking;
 
     // Getters and Setters
