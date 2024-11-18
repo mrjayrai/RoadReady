@@ -38,14 +38,15 @@ public class PaymentRestController {
 	
 	@GetMapping("/payment/{paymentId}")
 	private Payments getPaymentById(@PathVariable int paymentId){
-		Payments payment=null;
-		payment=paymentService.getPaymentById(paymentId);
-		if(payment!=null) {
-			return payment;
-		}
-		else {
-			throw new NullPointerException();
-		}
+//		Payments payment=null;
+//		payment=paymentService.getPaymentById(paymentId);
+//		if(payment!=null) {
+//			return payment;
+//		}
+//		else {
+//			throw new NullPointerException();
+//		}
+		return paymentService.getPaymentById(paymentId);
 	}
 	
 	@GetMapping("/user/{userId}")

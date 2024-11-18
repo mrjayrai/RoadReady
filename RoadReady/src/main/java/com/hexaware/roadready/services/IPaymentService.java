@@ -19,7 +19,7 @@ public interface IPaymentService {
     Payments getPaymentById(int paymentId);
 
     // Method to fetch all payments made by a specific user
-    List<Payments> getPaymentsByUserId(int userId) throws NullPointerException;
+    List<Payments> getPaymentsByUserId(int userId) ;
 
 
     // Update the payment status (e.g., mark as PAID, FAILED)
