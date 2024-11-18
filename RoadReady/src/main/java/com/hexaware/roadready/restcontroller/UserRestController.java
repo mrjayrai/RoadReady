@@ -31,6 +31,7 @@ public class UserRestController {
 	
 	@GetMapping("user/{userId}")
 	private List<Users> getUserById(@PathVariable int userId){
+		System.out.println(userId);
 		return service.getUserById(userId);
 	}
 	
