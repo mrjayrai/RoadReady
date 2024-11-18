@@ -16,19 +16,23 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
-import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Positive;
 
 @Entity
 @Table(name = "payments")
 public class Payments {
 
     @Id
-    @Min(value=1)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "payment_id")
     private int paymentId;
 
     @Column(name = "amount", nullable = false, precision = 10, scale = 2)
+    @NotNull(message = "Amount is required.")
+    @DecimalMin(value = "0.01", message = "Amount must be greater than zero.")
     private BigDecimal amount;
 
     @Temporal(TemporalType.TIMESTAMP)
@@ -37,18 +41,23 @@ public class Payments {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "payment_method", nullable = false)
+    @NotNull(message = "Payment method is required.")
+    @Pattern(regexp = "^(CASH|CREDIT_CARD|DEBIT_CARD|ONLINE)$", message = "Paymentmethod must be CASH, CREDIT_CARD, DEBIT_CARD, ONLINE.")
     private PaymentMethod paymentMethod;
 
     @Enumerated(EnumType.STRING)
+    @Pattern(regexp = "^(PENDING|PAID|FAILED)$", message = "Status must be PENDING, PAID, or FAILED.")
     @Column(name = "status", columnDefinition = "ENUM('PENDING', 'PAID', 'FAILED') DEFAULT 'PENDING'")
     private PaymentStatus status;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false)
+    @NotNull(message = "User ID is required.")
     private Users user; // Reference to the Users entity
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "booking_id", nullable = false)
+    @NotNull(message = "Booking ID is required.")
     private Bookings booking; // Reference to the Bookings entity
 
     // Getters and Setters

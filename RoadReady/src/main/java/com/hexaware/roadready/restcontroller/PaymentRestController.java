@@ -25,7 +25,7 @@ public class PaymentRestController {
 	IPaymentService paymentService;
 
 	@PostMapping("/addnewpayment")
-	public Payments addNewPayment(@RequestBody Payments payment) {
+	public Payments addNewPayment(@Valid @RequestBody Payments payment) {
 		// System.out.println(payment.toString());
 		return paymentService.addPayment(payment);
 		// return null;
@@ -63,13 +63,13 @@ public class PaymentRestController {
 	@PutMapping("/updatepayment/{paymentId}/{paymentStatus}")
 	private boolean updatePaymentStatus(@Valid @PathVariable int paymentId,@PathVariable String paymentStatus) {
 		Payments.PaymentStatus status = Payments.PaymentStatus.valueOf(paymentStatus);
-		boolean updateStatus= paymentService.updatePaymentStatus(paymentId, status);
-		if(updateStatus) {
-			return updateStatus;
-		}
-		else {
-			throw new RuntimeException();
-		}
+		return paymentService.updatePaymentStatus(paymentId, status);
+//		if(updateStatus) {
+//			return updateStatus;
+//		}
+//		else {
+//			throw new RuntimeException();
+//		}
 		
 	}
 	
