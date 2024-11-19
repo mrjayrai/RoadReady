@@ -39,7 +39,9 @@ class CarServiceImplTest {
 	void testFindCarsByType() {
 //		fail("Not yet implemented");
 		List<Car> cars=null;
-		String carType="Power Engine";
+
+		String carType="Petrol";
+
 		cars=carService.findCarsByType(carType);
 		assertNotNull(cars);
 		
@@ -49,7 +51,10 @@ class CarServiceImplTest {
 	void testFindCarsByCompany() {
 //		fail("Not yet implemented");
 		List<Car> cars=null;
-		String carCompany="Benz";
+		String carCompany="bmw";
+
+// 		String carCompany="Benz";
+
 		cars=carService.findCarsByType(carCompany);
 		assertNotNull(cars);
 	}
@@ -58,7 +63,11 @@ class CarServiceImplTest {
 	void testFindCarsByModel() {
 //		fail("Not yet implemented");
 		List<Car> cars=null;
-		String carModel="Rock";
+
+		String carModel="m20";
+
+	//	String carModel="Rock";
+
 		cars=carService.findCarsByType(carModel);
 		assertNotNull(cars);
 	}
@@ -66,7 +75,11 @@ class CarServiceImplTest {
 	@Test
 	void testFindCarsByYear() {
 //		fail("Not yet implemented");
-	   int year=2021;
+
+	   int year=2022;
+
+	  // int year=2021;
+
 	   List<Car> cars=null;
 		cars=carService.findCarsByYear(year);
 		assertNotNull(cars);
@@ -74,23 +87,22 @@ class CarServiceImplTest {
 	}
 
 	@Test
-//	@Disabled
+
+	//@Disabled
 	void testAddCar() {
-//		fail("Not yet implemented");
-		long id=302;
-		BigDecimal amount=new BigDecimal("40.00");
-		Car cars=new Car(id,"Tata","Amaze","High Power",2011,"786789",amount);
-//		Car car=new Car();
-//		car.setCarId(302);
-//		car.setCarCompany("Tata");
-//		car.setCarModel("High Power");
-//		car.setCarType("Amaze");
-//		car.setCarYear(2022);
-//		car.setLicensePlate("786789");
-//		car.setPricePerDay(0.01);
+//		Car cars=new Car(id,"Tata","Amaze","High Power",2011,"786789",amount);
+		BigDecimal amount=new BigDecimal("2000.00");
+		Car car =new Car();
+		car.setCarCompany("Jeep");
+		car.setCarModel("JEEP");
+		car.setCarType("Petrol");
+		car.setCarYear(2022);
+		car.setLicensePlate("GJ05AC4577");
+		car.setPricePerDay(amount);
 		Car addCar=null;
-		addCar=carService.addCar(addCar);
-		assertEquals(cars.getCarId(),302);
+		addCar=carService.addCar(car);
+		assertEquals(addCar.getCarYear(),car.getCarYear());
+
 		
 	}
 
@@ -98,11 +110,19 @@ class CarServiceImplTest {
 	void testUpdateCar() {
 //		fail("Not yet implemented");
 		long id=302;
-		BigDecimal amount=new BigDecimal("50.00");
-		Car cars=new Car(id,"Tata","Amaze","High Power",2011,"786789",amount);
+		BigDecimal amount=new BigDecimal("2500.00");
+		Car car =new Car();
+		car.setCarId(7);
+		car.setCarCompany("Jeep");
+		car.setCarModel("JEEP");
+		car.setCarType("Diesel");
+		car.setCarYear(2022);
+		car.setLicensePlate("GJ05AC4577");
+		car.setPricePerDay(amount);
 		Car addCar=null;
-		addCar=carService.updateCar(id, addCar);
-		assertEquals(cars.getCarId(),302);
+		addCar=carService.updateCar(car.getCarId(), car);
+		assertEquals(car.getCarId(),addCar.getCarId());
+
 	}
 
 	@Test
@@ -115,11 +135,12 @@ class CarServiceImplTest {
 
 	@Test
 	void testIsCarAvailable() {
-		fail("Not yet implemented");
-		  int carId=301;
-		  String startDateString = "10/12/2024";
+		//fail("Not yet implemented");
+		  int carId=1;
+		  String startDateString = "2024-11-20";
 	        LocalDate startDate = LocalDate.parse(startDateString);
-	  	  String endDateString = "10/12/2024";
+	  	  String endDateString = "2024-11-21";
+
 	        LocalDate endDate = LocalDate.parse(endDateString);
 	        boolean availability=carService.isCarAvailable(carId, startDate, endDate);
 	        assertTrue(availability);

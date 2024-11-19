@@ -46,11 +46,11 @@ public class Payments {
     @Enumerated(EnumType.STRING)
     @Column(name = "payment_method", nullable = false)
     @NotNull(message = "Payment method is required.")
-    @Pattern(regexp = "^(CASH|CREDIT_CARD|DEBIT_CARD|ONLINE)$", message = "Paymentmethod must be CASH, CREDIT_CARD, DEBIT_CARD, ONLINE.")
+    // @Pattern(regexp = "^(CASH|CREDIT_CARD|DEBIT_CARD|ONLINE)$", message = "Paymentmethod must be CASH, CREDIT_CARD, DEBIT_CARD, ONLINE.")
     private PaymentMethod paymentMethod;
 
     @Enumerated(EnumType.STRING)
-    @Pattern(regexp = "^(PENDING|PAID|FAILED)$", message = "Status must be PENDING, PAID, or FAILED.")
+   // @Pattern(regexp = "^(PENDING|PAID|FAILED)$", message = "Status must be PENDING, PAID, or FAILED.")
     @Column(name = "status", columnDefinition = "ENUM('PENDING', 'PAID', 'FAILED') DEFAULT 'PENDING'")
     private PaymentStatus status;
 

@@ -9,6 +9,10 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -36,11 +40,20 @@ class PaymentServiceImpTest {
 	@Test
 	void testAddPayment() {
 		Bookings booking=new Bookings(1);
-		Users user=new Users(101);
-		Payments payment=null;
-		PaymentStatus status=null;
-		PaymentMethod method=null;
-		payment=new Payments(8,1000.00,LocalDateTime.now(),method.CASH,status.PENDING,booking,user);
+
+		Users user=new Users(1);
+		Payments payment=new Payments();
+		PaymentStatus status=Payments.PaymentStatus.PAID;
+		PaymentMethod method=Payments.PaymentMethod.CASH;
+//		payment=new Payments(8,1000.00,LocalDateTime.now(),method.CASH,status.PENDING,booking,user);
+		BigDecimal amount = new BigDecimal("1000.00");
+		payment.setAmount(amount);
+		payment.setBooking(booking);
+		payment.setPaymentDate(LocalDateTime.now());
+		payment.setPaymentMethod(method);
+		payment.setStatus(status);
+		payment.setUser(user);
+
 		Payments paymentCheck=paymentService.addPayment(payment);
 		assertNotNull(paymentCheck);
 	}
@@ -56,7 +69,9 @@ class PaymentServiceImpTest {
 	@Test
 	void testGetPaymentsByUserId() {
 //		fail("Not yet implemented");
-		int userId=101;
+
+		int userId=1;
+
 		List<Payments> paymentList=null;
 		 paymentList=paymentService.getPaymentsByUserId(userId);
 		 assertNotNull(paymentList);
