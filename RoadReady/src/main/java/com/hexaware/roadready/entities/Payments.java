@@ -1,5 +1,9 @@
 package com.hexaware.roadready.entities;
-
+/*
+ * Author : Rajeshwari
+ * Description : Entity for Payments
+ * Date: 16-11-2024
+ */
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -72,7 +76,7 @@ public class Payments {
         PENDING, PAID, FAILED
     }
 
-    public Payments() {
+    public Payments(int i, double d, LocalDateTime localDateTime, PaymentMethod cash, PaymentStatus pending, Bookings booking2, Users user2) {
         super();
     }
 
@@ -88,6 +92,12 @@ public class Payments {
 		this.status = status;
 		this.user = user;
 		this.booking = booking;
+	}
+
+
+
+	public Payments() {
+		// TODO Auto-generated constructor stub
 	}
 
 

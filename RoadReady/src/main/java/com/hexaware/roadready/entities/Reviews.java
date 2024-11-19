@@ -117,6 +117,12 @@ public class Reviews{
 	public Reviews() {
 		super();
 	}
+	
+
+	public Reviews(int reviewId) {
+		super();
+		this.reviewId = reviewId;
+	}
 
 	@Override
 	public String toString() {
