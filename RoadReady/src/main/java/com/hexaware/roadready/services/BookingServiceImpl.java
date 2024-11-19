@@ -23,9 +23,9 @@ public class BookingServiceImpl implements IBookingService {
 	public List<Bookings> getBookingById(int bookingId) {
 		// TODO Auto-generated method stub
 		List<Bookings> bookings = bookingRepo.findByBookingId(bookingId);
-		if(bookings.isEmpty()) {
-			throw new NotFoundException("No booking found for Booking ID: " + bookingId);
-		}
+//		if(bookings.isEmpty()) {
+//			throw new NotFoundException("No booking found for Booking ID: " + bookingId);
+//		}
 		return bookings;
 	}
 
