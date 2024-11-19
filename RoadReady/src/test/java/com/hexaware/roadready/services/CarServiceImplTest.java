@@ -39,7 +39,9 @@ class CarServiceImplTest {
 	void testFindCarsByType() {
 //		fail("Not yet implemented");
 		List<Car> cars=null;
+
 		String carType="Petrol";
+
 		cars=carService.findCarsByType(carType);
 		assertNotNull(cars);
 		
@@ -50,6 +52,9 @@ class CarServiceImplTest {
 //		fail("Not yet implemented");
 		List<Car> cars=null;
 		String carCompany="bmw";
+
+// 		String carCompany="Benz";
+
 		cars=carService.findCarsByType(carCompany);
 		assertNotNull(cars);
 	}
@@ -58,7 +63,11 @@ class CarServiceImplTest {
 	void testFindCarsByModel() {
 //		fail("Not yet implemented");
 		List<Car> cars=null;
+
 		String carModel="m20";
+
+	//	String carModel="Rock";
+
 		cars=carService.findCarsByType(carModel);
 		assertNotNull(cars);
 	}
@@ -66,7 +75,11 @@ class CarServiceImplTest {
 	@Test
 	void testFindCarsByYear() {
 //		fail("Not yet implemented");
+
 	   int year=2022;
+
+	  // int year=2021;
+
 	   List<Car> cars=null;
 		cars=carService.findCarsByYear(year);
 		assertNotNull(cars);
@@ -74,6 +87,7 @@ class CarServiceImplTest {
 	}
 
 	@Test
+
 	//@Disabled
 	void testAddCar() {
 //		Car cars=new Car(id,"Tata","Amaze","High Power",2011,"786789",amount);
@@ -88,6 +102,7 @@ class CarServiceImplTest {
 		Car addCar=null;
 		addCar=carService.addCar(car);
 		assertEquals(addCar.getCarYear(),car.getCarYear());
+
 		
 	}
 
@@ -107,6 +122,7 @@ class CarServiceImplTest {
 		Car addCar=null;
 		addCar=carService.updateCar(car.getCarId(), car);
 		assertEquals(car.getCarId(),addCar.getCarId());
+
 	}
 
 	@Test
@@ -124,6 +140,7 @@ class CarServiceImplTest {
 		  String startDateString = "2024-11-20";
 	        LocalDate startDate = LocalDate.parse(startDateString);
 	  	  String endDateString = "2024-11-21";
+
 	        LocalDate endDate = LocalDate.parse(endDateString);
 	        boolean availability=carService.isCarAvailable(carId, startDate, endDate);
 	        assertTrue(availability);

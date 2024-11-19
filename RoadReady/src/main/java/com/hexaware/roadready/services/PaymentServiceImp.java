@@ -47,7 +47,9 @@ public class PaymentServiceImp implements IPaymentService {
 	public Payments getPaymentById(int paymentId) {
 		// TODO Auto-generated method stub
 		Payments payment=null;
+
 		logger.info("Payment get by paymentId"+paymentId);
+
 		payment=paymentRepository.findByPaymentId(paymentId);
 		if(payment != null) {
 			return payment;
