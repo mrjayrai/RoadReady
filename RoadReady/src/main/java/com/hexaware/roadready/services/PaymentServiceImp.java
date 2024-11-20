@@ -14,12 +14,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import com.hexaware.roadready.entities.Bookings;
 import com.hexaware.roadready.entities.Payments;
 import com.hexaware.roadready.entities.Role;
 import com.hexaware.roadready.entities.Users;
+import com.hexaware.roadready.exceptions.InvalidDataException;
 import com.hexaware.roadready.exceptions.NotFoundException;
 import com.hexaware.roadready.entities.Payments.PaymentMethod;
 import com.hexaware.roadready.entities.Payments.PaymentStatus;
@@ -39,8 +41,16 @@ public class PaymentServiceImp implements IPaymentService {
 	@Override
 	public Payments addPayment(Payments payment) {
 		// TODO Auto-generated method stub
-		logger.info("New Payment Details added");
-		return paymentRepository.save(payment);
+
+		Payments addPayment= paymentRepository.save(payment);
+		if(addPayment!=null) {
+			logger.info("New Payment Details added");
+			return addPayment;
+		}
+		else {
+			logger.error("Problem with add payments");
+			throw new InvalidDataException(HttpStatus.BAD_REQUEST,"Given data for payment is not valid");
+		}
 	}
 
 	@Override
@@ -55,6 +65,7 @@ public class PaymentServiceImp implements IPaymentService {
 			return payment;
 		}
 		else {
+			logger.error("Given paymentId is not exist");
 			throw new NotFoundException("No Payments found for paymentId: " + paymentId);
 		}
 	}
@@ -65,6 +76,7 @@ public class PaymentServiceImp implements IPaymentService {
 		List<Payments> payments= paymentRepository.findByUser_UserId(userId);
 		logger.info("Payment get by userId");
 		if(payments.isEmpty()) {
+			logger.error("Payment is not exist for given user id");
 			throw  new NotFoundException("No Payments found for userId: " + userId);
 		}
 		return payments;
@@ -79,13 +91,13 @@ public class PaymentServiceImp implements IPaymentService {
 		return row>0;
 	}
 
-
-	@Override
-	public boolean isPaymentCompleted(int paymentId) {
-		// TODO Auto-generated method stub
-		
-		return paymentRepository.existsByStatusAndBooking_BookingId( PaymentStatus.PAID,paymentId);
-	}
+//
+//	@Override
+//	public boolean isPaymentCompleted(int paymentId) {
+//		// TODO Auto-generated method stub
+//		
+//		return paymentRepository.existsByStatusAndBooking_BookingId( PaymentStatus.PAID,paymentId);
+//	}
 
 	@Override
 	public List<Payments> getAllPayments() {

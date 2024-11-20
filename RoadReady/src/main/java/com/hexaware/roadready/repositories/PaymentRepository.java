@@ -30,7 +30,7 @@ public interface PaymentRepository extends JpaRepository<Payments,Integer> {
 	
 	List<Payments> findByUser_UserId(int userId);
 	
-	boolean existsByStatusAndBooking_BookingId(Payments.PaymentStatus status,int paymentId);
+//	boolean existsByStatusAndBooking_BookingId(Payments.PaymentStatus status,int paymentId);
 	
 	
 	@Query("SELECT p.status from Payments p where p.paymentId=?1")
