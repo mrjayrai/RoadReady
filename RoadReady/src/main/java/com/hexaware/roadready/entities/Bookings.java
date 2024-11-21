@@ -48,11 +48,10 @@ public class Bookings {
 
     @Column(name = "total_price", nullable = false)
     @NotNull(message = "Total price is required.")
-    @DecimalMin(value = "0.01", message = "Total price must be greater than zero.")
     private BigDecimal totalPrice;
 
     @NotNull(message = "Status is required.")
-    @Pattern(regexp = "^(PENDING|CONFIRMED|CANCELLED)$", message = "Status must be PENDING, CONFIRMED, or CANCELLED.")
+    // @Pattern(regexp = "^(PENDING|CONFIRMED|CANCELLED)$", message = "Status must be PENDING, CONFIRMED, or CANCELLED.")
     @Column(name = "status", nullable = false)
     private String status;
 
