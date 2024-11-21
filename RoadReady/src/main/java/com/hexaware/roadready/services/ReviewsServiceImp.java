@@ -53,6 +53,7 @@ public class ReviewsServiceImp implements IReviewsService {
 			return review;
 		}
 		else {
+			logger.error("Review not found for review id");
 			throw new NotFoundException("No Review found for reviewId: " + reviewId);
 		}
 	}
@@ -63,6 +64,8 @@ public class ReviewsServiceImp implements IReviewsService {
 		List<Reviews> review = reviewRepository.findByBooking_bookingId(bookingId);
 		logger.info("Review get by booking Id");
 		if(review.isEmpty()) {
+			logger.error("Review not found for given booking id");
+
 			throw new NotFoundException("No Review found for booking: " + bookingId);
 		}
 		return review;
@@ -74,6 +77,8 @@ public class ReviewsServiceImp implements IReviewsService {
 		logger.info("Review get by user Id");
 		List<Reviews> review = reviewRepository.findByUser_userId(userId);
 		if(review.isEmpty()) {
+			logger.error("Review not found for given user id");
+
 			throw new NotFoundException("No Review found for User: " + userId);
 		}
 		return review;

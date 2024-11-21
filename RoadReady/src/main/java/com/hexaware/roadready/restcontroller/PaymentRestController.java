@@ -60,11 +60,11 @@ public class PaymentRestController {
 		return payment;
 	}
 	
-	@GetMapping("/paymentstatus/{paymentId}")
-	private boolean isPaymentCompleted(@PathVariable int paymentId) {
-		return paymentService.isPaymentCompleted(paymentId);
-	}
-	
+//	@GetMapping("/paymentstatus/{paymentId}")
+//	private boolean isPaymentCompleted(@PathVariable int paymentId) {
+//		return paymentService.isPaymentCompleted(paymentId);
+//	}
+//	
 	@PutMapping("/updatepayment/{paymentId}/{paymentStatus}")
 	private boolean updatePaymentStatus(@Valid @PathVariable int paymentId,@PathVariable String paymentStatus) {
 		Payments.PaymentStatus status = Payments.PaymentStatus.valueOf(paymentStatus);

@@ -41,7 +41,7 @@ class PaymentServiceImpTest {
 	void testAddPayment() {
 		Bookings booking=new Bookings(1);
 
-		Users user=new Users(1);
+		Users user=new Users(101);
 		Payments payment=new Payments();
 		PaymentStatus status=Payments.PaymentStatus.PAID;
 		PaymentMethod method=Payments.PaymentMethod.CASH;
@@ -70,7 +70,7 @@ class PaymentServiceImpTest {
 	void testGetPaymentsByUserId() {
 //		fail("Not yet implemented");
 
-		int userId=1;
+		int userId=101;
 
 		List<Payments> paymentList=null;
 		 paymentList=paymentService.getPaymentsByUserId(userId);

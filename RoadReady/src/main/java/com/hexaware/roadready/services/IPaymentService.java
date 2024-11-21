@@ -29,7 +29,7 @@ public interface IPaymentService {
 //    Double getTotalAmountPaid(Integer bookingId);
 
     // Check if payment is completed for a specific booking
-    boolean isPaymentCompleted(int paymentId);
+//    boolean isPaymentCompleted(int paymentId);
     
     // Method to fetch all payment transactions (for admin use)
     List<Payments> getAllPayments();
