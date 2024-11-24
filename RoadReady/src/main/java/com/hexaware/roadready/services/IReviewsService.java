@@ -7,11 +7,12 @@ package com.hexaware.roadready.services;
 import java.util.List;
 import java.util.Optional;
 
+import com.hexaware.roadready.dto.ReviewDTO;
 import com.hexaware.roadready.entities.Reviews;
 
 public interface IReviewsService {
 	// Add a new review for a booking
-    Reviews addReview(Reviews review);
+    Reviews addReview(ReviewDTO reviewDto);
 
     // Update an existing review (by reviewId)
     Reviews updateReview(Reviews review);
@@ -30,5 +31,6 @@ public interface IReviewsService {
 
     // Fetch all reviews in the system (for admin use)
     List<Reviews> getAllReviews();
+    
 
 }

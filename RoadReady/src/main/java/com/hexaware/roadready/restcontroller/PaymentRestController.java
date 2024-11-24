@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hexaware.roadready.dto.PaymentDTO;
 import com.hexaware.roadready.entities.Payments;
 import com.hexaware.roadready.entities.Users;
 import com.hexaware.roadready.services.IPaymentService;
@@ -29,9 +30,9 @@ public class PaymentRestController {
 	IPaymentService paymentService;
 
 	@PostMapping("/addnewpayment")
-	public Payments addNewPayment(@Valid @RequestBody Payments payment) {
+	public Payments addNewPayment(@Valid @RequestBody PaymentDTO paymentDto) {
 		// System.out.println(payment.toString());
-		return paymentService.addPayment(payment);
+		return paymentService.addPayment(paymentDto);
 		// return null;
 	}
 

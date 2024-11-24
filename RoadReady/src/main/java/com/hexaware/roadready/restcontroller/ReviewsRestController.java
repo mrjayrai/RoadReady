@@ -19,7 +19,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
+import com.hexaware.roadready.dto.ReviewDTO;
 import com.hexaware.roadready.entities.Reviews;
 import com.hexaware.roadready.services.IReviewsService;
 
@@ -31,6 +33,8 @@ public class ReviewsRestController {
 	
 	@Autowired
 	IReviewsService reviewService;
+	
+	
 	
 	@GetMapping("/all/reviews")
 	private List<Reviews> getAllReviews(){
@@ -88,8 +92,8 @@ public class ReviewsRestController {
 	}
 	
 	@PostMapping("/add")
-	private Reviews addReview(@Valid @RequestBody Reviews review) {
-		return reviewService.addReview(review);
+	private Reviews addReview(@Valid @RequestBody ReviewDTO reviewDto) {
+		return reviewService.addReview(reviewDto);
 	}
 	
 	@PutMapping("/update")
