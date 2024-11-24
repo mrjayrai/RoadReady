@@ -1,12 +1,14 @@
 package com.hexaware.roadready.services;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
+import com.hexaware.roadready.entities.Reviews;
 import com.hexaware.roadready.entities.Users;
-import com.hexaware.roadready.exceptions.NotFoundException;
 import com.hexaware.roadready.repositories.UsersRepository;
 
 
@@ -15,6 +17,8 @@ public class UserServiceImpl implements IUserService {
 
 	@Autowired
 	private UsersRepository userRepo;
+	@Autowired
+	RestTemplate restTemplate;
 	@Override
 	public List<Users> getAllUsers() {
 		// TODO Auto-generated method stub
@@ -58,5 +62,26 @@ public class UserServiceImpl implements IUserService {
 		// TODO Auto-generated method stub
 		return userRepo.existsByEmailAndPassword(username, password);
 	}
+
+	@Override
+	public void updateReviewByUser(Reviews review) {
+		// TODO Auto-generated method stub
+		restTemplate.put("http://localhost:8080/api/reviews/update", review);
+		
+	}
+
+	@Override
+	public List<Reviews> getReviewsByUserId(int userId) {
+		// TODO Auto-generated method stub
+//		List<Reviews> reviewList=(List<Reviews>) restTemplate.getForObject("http://localhost:8080/api/reviews/review/user/" + userId, Reviews.class);
+//		String url = "http://localhost:8080/api/reviews/review/user/" + userId;
+//		List<Reviews> reviewList = (List<Reviews>) restTemplate.getForObject(url, Reviews.class);
+		String url = "http://localhost:8080/api/reviews/review/user/" + userId;
+		List<Reviews> reviewList = Arrays.asList(restTemplate.getForObject(url, Reviews[].class));
+
+		return reviewList;
+	}
+
+	
 
 }

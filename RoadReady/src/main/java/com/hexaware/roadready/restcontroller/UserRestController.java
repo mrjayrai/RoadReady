@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hexaware.roadready.entities.Reviews;
 import com.hexaware.roadready.entities.Users;
 import com.hexaware.roadready.services.IUserService;
 
@@ -54,6 +55,16 @@ public class UserRestController {
 	private List<Users> getUserByUserName(@PathVariable String userName){
 		return service.findByUsername(userName);
 	} 
+	@PutMapping("/update/modifyreviewbyuser")
+	public String modifyReview(@RequestBody @Valid Reviews review) {
+		service.updateReviewByUser(review);
+		return "Review updated via users";
+		
+	}
+	@GetMapping("getReviewsByUserId/{userId}")
+	public List<Reviews> getReviewsByUserId(@PathVariable int userId){
+		return service.getReviewsByUserId(userId);
+	}
 	
 //	@PostMapping("")
 

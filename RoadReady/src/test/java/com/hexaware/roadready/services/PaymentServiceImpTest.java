@@ -22,6 +22,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.hexaware.roadready.dto.PaymentDTO;
 import com.hexaware.roadready.entities.Bookings;
 import com.hexaware.roadready.entities.Payments;
 import com.hexaware.roadready.entities.Payments.PaymentMethod;
@@ -39,23 +40,36 @@ class PaymentServiceImpTest {
 
 	@Test
 	void testAddPayment() {
-		Bookings booking=new Bookings(1);
+//		Bookings booking=new Bookings(1);
+//
+//		Users user=new Users(101);
+//		Payments payment=new Payments();
+//		PaymentStatus status=Payments.PaymentStatus.PAID;
+//		PaymentMethod method=Payments.PaymentMethod.CASH;
+////		payment=new Payments(8,1000.00,LocalDateTime.now(),method.CASH,status.PENDING,booking,user);
+//		BigDecimal amount = new BigDecimal("1000.00");
+//		payment.setAmount(amount);
+//		payment.setBooking(booking);
+//		payment.setPaymentDate(LocalDateTime.now());
+//		payment.setPaymentMethod(method);
+//		payment.setStatus(status);
+//		payment.setUser(user);
 
-		Users user=new Users(101);
+//		Payment paymentCheck=paymentService.addPayment(payment);
+//		assertNotNull(paymentCheck);
+		PaymentDTO paymentDto=new PaymentDTO();
 		Payments payment=new Payments();
-		PaymentStatus status=Payments.PaymentStatus.PAID;
-		PaymentMethod method=Payments.PaymentMethod.CASH;
-//		payment=new Payments(8,1000.00,LocalDateTime.now(),method.CASH,status.PENDING,booking,user);
+		paymentDto.setBookingId(1);
 		BigDecimal amount = new BigDecimal("1000.00");
-		payment.setAmount(amount);
-		payment.setBooking(booking);
-		payment.setPaymentDate(LocalDateTime.now());
-		payment.setPaymentMethod(method);
-		payment.setStatus(status);
-		payment.setUser(user);
-
-		Payments paymentCheck=paymentService.addPayment(payment);
+		paymentDto.setAmount(amount);
+		paymentDto.setPaymentMethod("CASH");
+		paymentDto.setUserId(101);
+		paymentDto.setStatus("FAILED");
+		paymentDto.setPaymentDate(LocalDateTime.now());
+		Payments paymentCheck=paymentService.addPayment(paymentDto);
 		assertNotNull(paymentCheck);
+		
+		
 	}
 
 	@Test

@@ -7,13 +7,14 @@ package com.hexaware.roadready.services;
 import java.util.List;
 import java.util.Optional;
 
+import com.hexaware.roadready.dto.PaymentDTO;
 import com.hexaware.roadready.entities.Payments;
 import com.hexaware.roadready.entities.Payments.PaymentStatus;
 import com.hexaware.roadready.entities.Users;
 
 public interface IPaymentService {
 	 // Method to process a new payment
-    Payments addPayment(Payments payment);
+    Payments addPayment(PaymentDTO paymentDto);
 
     // Method to retrieve a payment by its ID
     Payments getPaymentById(int paymentId);

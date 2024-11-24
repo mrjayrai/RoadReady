@@ -2,6 +2,7 @@ package com.hexaware.roadready.services;
 
 import java.util.List;
 
+import com.hexaware.roadready.entities.Reviews;
 import com.hexaware.roadready.entities.Users;
 
 
@@ -13,4 +14,6 @@ public interface IUserService {
     void deleteUser(int userId);
     List<Users> findByUsername(String username);
     boolean validateUserCredentials(String username, String password);
+    void updateReviewByUser(Reviews review);
+    List<Reviews> getReviewsByUserId(int userId);
 }

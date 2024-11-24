@@ -12,7 +12,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.hexaware.roadready.dto.ReviewDTO;
+import com.hexaware.roadready.entities.Bookings;
 import com.hexaware.roadready.entities.Reviews;
+import com.hexaware.roadready.entities.Users;
 import com.hexaware.roadready.exceptions.NotFoundException;
 import com.hexaware.roadready.repositories.ReviewsRepository;
 @Service
@@ -23,11 +26,24 @@ public class ReviewsServiceImp implements IReviewsService {
 	Logger logger =	   LoggerFactory.getLogger(ReviewsServiceImp.class);
 
 	@Override
-	public Reviews addReview(Reviews review) {
+	public Reviews addReview(ReviewDTO review) {
 		// TODO Auto-generated method stub
-		logger.info("New Review Details added");
-		return reviewRepository.save(review);
+//		logger.info("New Review Details added");
+//		return reviewRepository.save(review);
+		Reviews addReview=new Reviews();
+		int bookingId=review.getBookingId();
+		Bookings booking=new Bookings(bookingId);
+		addReview.setBooking(booking);
+		int userId=review.getUserId();
+		Users user=new Users(userId);
+		addReview.setUser(user);
+		addReview.setRating(review.getRating());
+		addReview.setReviewText(review.getReviewText());
+		addReview.setReviewDate(review.getReviewDate());
+		return reviewRepository.save(addReview);
+		
 	}
+	
 
 	@Override
 	public Reviews updateReview(Reviews review) {
