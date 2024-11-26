@@ -4,9 +4,11 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.hexaware.roadready.dto.UserDTO;
 import com.hexaware.roadready.entities.Reviews;
 import com.hexaware.roadready.entities.Users;
 import com.hexaware.roadready.repositories.UsersRepository;
@@ -19,6 +21,10 @@ public class UserServiceImpl implements IUserService {
 	private UsersRepository userRepo;
 	@Autowired
 	RestTemplate restTemplate;
+	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+	
 	@Override
 	public List<Users> getAllUsers() {
 		// TODO Auto-generated method stub
@@ -33,15 +39,33 @@ public class UserServiceImpl implements IUserService {
 	}
 
 	@Override
-	public Users addUser(Users user) {
+	public Users addUser(UserDTO user) {
 		// TODO Auto-generated method stub
-		return userRepo.save(user);
+		
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
+		System.out.println("Added");
+		Users userEntity = new Users();
+		userEntity.setEmail(user.getEmail());
+		userEntity.setName(user.getName());
+		userEntity.setPassword(user.getPassword());
+		userEntity.setPhoneNumber(user.getPhoneNumber());
+		userEntity.setRole(user.getRoleId());
+		userEntity.setCreatedAt(user.getCreatedAt());
+		return userRepo.save(userEntity);
+		
 	}
 
 	@Override
-	public Users updateUser(Users updatedUser) {
+	public Users updateUser(UserDTO user) {
 		// TODO Auto-generated method stub
-		return userRepo.save(updatedUser);
+		Users userEntity = new Users();
+		userEntity.setEmail(user.getEmail());
+		userEntity.setName(user.getName());
+		userEntity.setPassword(user.getPassword());
+		userEntity.setPhoneNumber(user.getPhoneNumber());
+		userEntity.setRole(user.getRoleId());
+		userEntity.setCreatedAt(user.getCreatedAt());
+		return userRepo.save(userEntity);
 	}
 
 	@Override
@@ -73,9 +97,6 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public List<Reviews> getReviewsByUserId(int userId) {
 		// TODO Auto-generated method stub
-//		List<Reviews> reviewList=(List<Reviews>) restTemplate.getForObject("http://localhost:8080/api/reviews/review/user/" + userId, Reviews.class);
-//		String url = "http://localhost:8080/api/reviews/review/user/" + userId;
-//		List<Reviews> reviewList = (List<Reviews>) restTemplate.getForObject(url, Reviews.class);
 		String url = "http://localhost:8080/api/reviews/review/user/" + userId;
 		List<Reviews> reviewList = Arrays.asList(restTemplate.getForObject(url, Reviews[].class));
 

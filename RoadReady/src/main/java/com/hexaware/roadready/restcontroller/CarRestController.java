@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hexaware.roadready.dto.CarDTO;
 import com.hexaware.roadready.entities.Car;
 import com.hexaware.roadready.entities.CarAvailabilityRequest;
 import com.hexaware.roadready.services.ICarService;
@@ -54,7 +55,7 @@ public class CarRestController {
 	}
 	
 	@PostMapping("add")
-	private ResponseEntity<Car> addCar( @RequestBody @Valid Car car) {
+	private ResponseEntity<Car> addCar( @RequestBody @Valid CarDTO car) {
 		 Car savedCar = carService.addCar(car);
 	        return ResponseEntity.ok(savedCar);
 	}
@@ -71,7 +72,7 @@ public class CarRestController {
 	}
 	
 	@PutMapping("update")
-	private Car updateCar(@RequestBody @Valid Car car) {
+	private Car updateCar(@RequestBody @Valid CarDTO car) {
 		return carService.updateCar(car.getCarId(), car);
 	}
 

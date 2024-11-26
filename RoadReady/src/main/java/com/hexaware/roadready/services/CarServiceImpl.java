@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 
+import com.hexaware.roadready.dto.CarDTO;
 import com.hexaware.roadready.entities.Car;
 import com.hexaware.roadready.exceptions.NotFoundException;
 import com.hexaware.roadready.repositories.CarRepository;
@@ -62,18 +63,32 @@ public class CarServiceImpl implements ICarService {
 
 	@Modifying
 	@Override
-	public Car addCar(Car car) {
+	public Car addCar(CarDTO car) {
 		// TODO Auto-generated method stub
+		Car carEntity = new Car();
+		carEntity.setCarCompany(car.getCarCompany());
+		carEntity.setCarModel(car.getCarModel());
+		carEntity.setCarType(car.getCarType());
+		carEntity.setCarYear(car.getCarYear());
+		carEntity.setLicensePlate(car.getLicensePlate());
+		carEntity.setPricePerDay(car.getPricePerDay());
 		logger.info("New Car Details Added");
-		return carRepository.save(car);
+		return carRepository.save(carEntity);
 	}
 
 	@Modifying
 	@Override
-	public Car updateCar(long carId, Car updatedCar) {
+	public Car updateCar(long carId, CarDTO car) {
 		// TODO Auto-grated method stub
+		Car carEntity = new Car();
+		carEntity.setCarCompany(car.getCarCompany());
+		carEntity.setCarModel(car.getCarModel());
+		carEntity.setCarType(car.getCarType());
+		carEntity.setCarYear(car.getCarYear());
+		carEntity.setLicensePlate(car.getLicensePlate());
+		carEntity.setPricePerDay(car.getPricePerDay());
 		logger.info("Exist Car Details Updated");
-		return carRepository.save(updatedCar);
+		return carRepository.save(carEntity);
 	}
 
 	@Modifying

@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.hexaware.roadready.dto.RoleDTO;
 import com.hexaware.roadready.entities.Role;
 @SpringBootTest
 class RoleServiceImplTest {
@@ -40,7 +41,8 @@ class RoleServiceImplTest {
 	@Test
 	void testAddRole() {
 //		fail("Not yet implemented");
-		Role role=new Role(6,"Admin");
+		RoleDTO role=new RoleDTO();
+		role.setRoleName("Admin");
 		Role addRole=roleService.addRole(role);
 		assertEquals(addRole.getRoleId(),6);
 	}
@@ -48,9 +50,10 @@ class RoleServiceImplTest {
 	@Test
 	void testUpdateRole() {
 //		fail("Not yet implemented");
-		Role role=new Role(4,"Employee");
+		RoleDTO role=new RoleDTO();
+		role.setRoleName("Driver");
 		Role updateRole=roleService.updateRole(role);
-		assertEquals(updateRole.getRoleName(),"Employee");
+		assertEquals(updateRole.getRoleName(),"Driver");
 	}
 
 	@Test

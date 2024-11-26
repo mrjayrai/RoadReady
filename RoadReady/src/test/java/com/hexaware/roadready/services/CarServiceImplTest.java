@@ -15,6 +15,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.hexaware.roadready.dto.CarDTO;
 import com.hexaware.roadready.entities.Car;
 @SpringBootTest
 class CarServiceImplTest {
@@ -92,7 +93,7 @@ class CarServiceImplTest {
 	void testAddCar() {
 //		Car cars=new Car(id,"Tata","Amaze","High Power",2011,"786789",amount);
 		BigDecimal amount=new BigDecimal("2000.00");
-		Car car =new Car();
+		CarDTO car =new CarDTO();
 		car.setCarCompany("Audi");
 		car.setCarModel("Q7");
 		car.setCarType("Petrol");
@@ -111,7 +112,7 @@ class CarServiceImplTest {
 //		fail("Not yet implemented");
 		long id=302;
 		BigDecimal amount=new BigDecimal("2500.00");
-		Car car =new Car();
+		CarDTO car =new CarDTO();
 		car.setCarId(1);
 		car.setCarCompany("Jeep");
 		car.setCarModel("JEEP");

@@ -7,6 +7,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.hexaware.roadready.dto.RoleDTO;
 import com.hexaware.roadready.entities.Role;
 import com.hexaware.roadready.repositories.RoleRepository;
 
@@ -32,17 +33,22 @@ public class RoleServiceImpl implements IRoleService {
 	}
 
 	@Override
-	public Role addRole(Role role) {
+	public Role addRole(RoleDTO role) {
 		// TODO Auto-generated method stub
+		Role roleEntity = new Role();
+		roleEntity.setRoleName(role.getRoleName());
 	       logger.info("New Role details added");
-		return roleRepo.save(role);
+		return roleRepo.save(roleEntity);
 	}
 
 	@Override
-	public Role updateRole(Role updateRole) {
+	public Role updateRole(RoleDTO updateRole) {
 		// TODO Auto-generated method stub
 	       logger.info("Exist role details updated");
-		return roleRepo.save(updateRole);
+	       Role roleEntity = new Role();
+			roleEntity.setRoleName(updateRole.getRoleName());
+			roleEntity.setRoleId(updateRole.getRoleId());
+		return roleRepo.save(roleEntity);
 	}
 
 	@Override

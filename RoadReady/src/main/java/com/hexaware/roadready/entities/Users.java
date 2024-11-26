@@ -25,14 +25,18 @@ public class Users {
     @Size(max = 255, message = "Email must not exceed 255 characters")
     @Column(name = "email", nullable = false, unique = true)
     private String email;
+    
+    @NotNull(message="Name cannot be null")
+    @NotBlank(message = "Name cannot be blank")
+    private String name;
 
     @NotNull(message = "Password cannot be null")
     @NotBlank(message = "Password cannot be blank")
     @Size(min = 8, message = "Password must be at least 8 characters long")
     @Pattern(
-            regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$",
-            message = "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character"
-        )
+    	    regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[A-Za-z\\d@$!%*?&]{8,}$",
+    	    message = "Password must contain at least one uppercase letter, one lowercase letter, and one number"
+    	)
     @Column(name = "password", nullable = false)
     private String password;
 
@@ -110,10 +114,26 @@ public class Users {
 		this.userId = userId;
 	}
 
-	public Users(int userId, String email, String password, String phoneNumber, Role role, LocalDateTime createdAt) {
+	
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Users(int userId,
+			@NotNull(message = "Email cannot be null") @NotBlank(message = "Email cannot be blank") @Email(message = "Email should be valid") @Size(max = 255, message = "Email must not exceed 255 characters") String email,
+			@NotNull(message = "Name cannot be null") @NotBlank(message = "Name cannot be blank") String name,
+			@NotNull(message = "Password cannot be null") @NotBlank(message = "Password cannot be blank") @Size(min = 8, message = "Password must be at least 8 characters long") @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[A-Za-z\\d@$!%*?&]{8,}$", message = "Password must contain at least one uppercase letter, one lowercase letter, and one number") String password,
+			@NotNull(message = "Phone number cannot be null") @NotBlank(message = "Phone number cannot be blank") @Pattern(regexp = "\\d{10}", message = "Phone number must be exactly 10 digits") String phoneNumber,
+			@NotNull(message = "Role cannot be null") Role role, LocalDateTime createdAt) {
 		super();
 		this.userId = userId;
 		this.email = email;
+		this.name = name;
 		this.password = password;
 		this.phoneNumber = phoneNumber;
 		this.role = role;
@@ -122,9 +142,10 @@ public class Users {
 
 	@Override
 	public String toString() {
-		return "Users [userId=" + userId + ", email=" + email + ", password=" + password + ", phoneNumber="
-				+ phoneNumber + ", role=" + role + ", createdAt=" + createdAt + "]";
+		return "Users [userId=" + userId + ", email=" + email + ", name=" + name + ", password=" + password
+				+ ", phoneNumber=" + phoneNumber + ", role=" + role + ", createdAt=" + createdAt + "]";
 	}
-    
+
+	    
 }
 

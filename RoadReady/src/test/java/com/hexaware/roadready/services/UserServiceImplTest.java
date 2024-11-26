@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.hexaware.roadready.dto.UserDTO;
 import com.hexaware.roadready.entities.Role;
 import com.hexaware.roadready.entities.Users;
 import com.hexaware.roadready.exceptions.NotFoundException;
@@ -46,11 +47,11 @@ class UserServiceImplTest {
         Role role = new Role();
         role.setRoleId(1); // Assuming a role with ID 2 exists in the database.
 
-        Users user = new Users();
+        UserDTO user = new UserDTO();
         user.setEmail("newuseu@gmail.com");
         user.setPassword("SecurePassword1@");
         user.setPhoneNumber("1234567999");
-        user.setRole(role);
+        user.setRoleId(role);
         user.setCreatedAt(LocalDateTime.now());
 
         Users createdUser = service.addUser(user);
@@ -63,12 +64,12 @@ class UserServiceImplTest {
         Role role = new Role();
         role.setRoleId(1);
 
-        Users user = new Users();
+        UserDTO user = new UserDTO();
         user.setUserId(1); // Assuming a user with ID 1 exists in the database.
         user.setEmail("updateduser@example.com");
         user.setPassword("UpdatedPassword1@");
         user.setPhoneNumber("9876543210");
-        user.setRole(role);
+        user.setRoleId(role);
 
         Users updatedUser = service.updateUser(user);
         assertNotNull(updatedUser);

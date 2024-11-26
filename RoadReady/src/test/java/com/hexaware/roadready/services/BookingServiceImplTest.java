@@ -11,6 +11,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import com.hexaware.roadready.dto.BookingDTO;
 import com.hexaware.roadready.entities.Bookings;
 import com.hexaware.roadready.entities.Car;
 import com.hexaware.roadready.entities.Users;
@@ -45,12 +46,12 @@ class BookingServiceImplTest {
 	@Test
 	void testCreateBooking() {
 		//fail("Not yet implemented");
-		Bookings booking = new Bookings();
+		BookingDTO booking = new BookingDTO();
 		Car car = new Car();
 		car.setCarId(5);
 		Users user = new Users(1);
-		booking.setCar(car);
-		booking.setUser(user);
+		booking.setCarId(car);
+		booking.setUserId(user);
 		String start = "2024-11-19";
 		LocalDate startDate = LocalDate.parse(start);
 		booking.setStartDate(startDate);
@@ -67,13 +68,13 @@ class BookingServiceImplTest {
 	@Test
 	void testUpdateBooking() {
 //	fail("Not yet implemented");
-		Bookings booking = new Bookings();
+		BookingDTO booking = new BookingDTO();
 		booking.setBookingId(3);
 		Car car = new Car();
 		car.setCarId(5);
 		Users user = new Users(1);
-		booking.setCar(car);
-		booking.setUser(user);
+		booking.setCarId(car);
+		booking.setUserId(user);
 		String start = "2024-11-19";
 		LocalDate startDate = LocalDate.parse(start);
 		booking.setStartDate(startDate);

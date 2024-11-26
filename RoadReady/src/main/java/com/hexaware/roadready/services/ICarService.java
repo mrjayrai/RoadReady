@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.hexaware.roadready.dto.CarDTO;
 import com.hexaware.roadready.entities.Car;
 
 public interface ICarService {
@@ -18,9 +19,9 @@ public interface ICarService {
 
 	List<Car> findCarsByYear(int year);
 
-	Car addCar(Car car);
+	Car addCar(CarDTO car);
 
-	Car updateCar(long carId, Car updatedCar);
+	Car updateCar(long carId, CarDTO updatedCar);
 
 	String deleteCar(int carId);
 

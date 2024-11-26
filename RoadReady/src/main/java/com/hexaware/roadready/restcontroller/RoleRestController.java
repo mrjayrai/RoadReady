@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hexaware.roadready.dto.RoleDTO;
 import com.hexaware.roadready.entities.Role;
 import com.hexaware.roadready.services.IRoleService;
 
@@ -35,12 +36,12 @@ public class RoleRestController {
 	}
 	
 	@PostMapping("add")
-	private Role addRole(@RequestBody @Valid Role role) {
+	private Role addRole(@RequestBody @Valid RoleDTO role) {
 		return service.addRole(role);
 	}
 	
 	@PutMapping("update")
-	private Role updateRole(@RequestBody @Valid Role role) {
+	private Role updateRole(@RequestBody @Valid RoleDTO role) {
 		return service.updateRole(role);
 	}
 	

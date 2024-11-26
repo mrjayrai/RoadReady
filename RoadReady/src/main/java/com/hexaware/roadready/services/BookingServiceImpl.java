@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.hexaware.roadready.dto.BookingDTO;
 import com.hexaware.roadready.entities.Bookings;
 import com.hexaware.roadready.exceptions.NotFoundException;
 import com.hexaware.roadready.repositories.BookingsRepository;
@@ -36,15 +37,31 @@ public class BookingServiceImpl implements IBookingService {
 	}
 
 	@Override
-	public Bookings createBooking(Bookings booking) {
+	public Bookings createBooking(BookingDTO booking) {
 		// TODO Auto-generated method stub
-		return bookingRepo.save(booking);
+		Bookings bookEntity = new Bookings();
+		bookEntity.setCar(booking.getCarId());
+		bookEntity.setUser(booking.getUserId());
+		bookEntity.setEndDate(booking.getEndDate());
+		bookEntity.setStartDate(booking.getStartDate());
+		bookEntity.setStatus(booking.getStatus());
+		bookEntity.setTotalPrice(booking.getTotalPrice());
+		
+		return bookingRepo.save(bookEntity);
 	}
 
 	@Override
-	public Bookings updateBooking(Bookings updateBooking) {
+	public Bookings updateBooking(BookingDTO booking) {
 		// TODO Auto-generated method stub
-		return bookingRepo.save(updateBooking);
+		Bookings bookEntity = new Bookings();
+		bookEntity.setBookingId(booking.getBookingId());
+		bookEntity.setCar(booking.getCarId());
+		bookEntity.setUser(booking.getUserId());
+		bookEntity.setEndDate(booking.getEndDate());
+		bookEntity.setStartDate(booking.getStartDate());
+		bookEntity.setStatus(booking.getStatus());
+		bookEntity.setTotalPrice(booking.getTotalPrice());
+		return bookingRepo.save(bookEntity);
 	}
 
 	@Override

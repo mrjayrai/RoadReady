@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.hexaware.roadready.dto.BookingDTO;
 import com.hexaware.roadready.entities.Bookings;
 import com.hexaware.roadready.services.IBookingService;
 
@@ -35,7 +36,7 @@ public class BookingRestController {
 	}
 	
 	@PutMapping("update")
-	private Bookings updateBooking(@RequestBody Bookings updateBooking) {
+	private Bookings updateBooking(@RequestBody BookingDTO updateBooking) {
 		return service.updateBooking(updateBooking);
 	}
 	
@@ -45,7 +46,7 @@ public class BookingRestController {
 	}
 	
 	@PostMapping("add")
-	private Bookings addBooking(@Valid @RequestBody Bookings booking) {
+	private Bookings addBooking(@Valid @RequestBody BookingDTO booking) {
 		return service.createBooking(booking);
 	}
 
