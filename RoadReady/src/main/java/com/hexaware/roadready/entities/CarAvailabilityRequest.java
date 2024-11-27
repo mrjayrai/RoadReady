@@ -1,5 +1,9 @@
 package com.hexaware.roadready.entities;
-
+/*
+ * Author : Pritesh Rai
+ * Description : DTO object for a Rest API
+ * Date: 16-11-2024
+ */
 import java.time.LocalDate;
 
 public class CarAvailabilityRequest {

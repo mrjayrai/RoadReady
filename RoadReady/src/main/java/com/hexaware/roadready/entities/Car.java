@@ -1,5 +1,9 @@
 package com.hexaware.roadready.entities;
-
+/*
+ * Author : Pritesh Rai
+ * Description : Entity for Cars
+ * Date: 16-11-2024
+ */
 import java.math.BigDecimal;
 
 import jakarta.persistence.Column;

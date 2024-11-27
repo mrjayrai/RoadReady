@@ -1,5 +1,9 @@
 package com.hexaware.roadready.config;
-
+/*
+ * Author : Pritesh Rai
+ * Description : User Config class
+ * Date: 25-11-2024
+ */
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;

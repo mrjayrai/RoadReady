@@ -1,5 +1,9 @@
 package com.hexaware.roadready.exceptions;
-
+/*
+ * Author : Rajeshwari
+ * Description : Exception for Invalid Data
+ * Date: 16-11-2024
+ */
 import org.springframework.http.HttpStatusCode;
 import org.springframework.web.server.ResponseStatusException;
 

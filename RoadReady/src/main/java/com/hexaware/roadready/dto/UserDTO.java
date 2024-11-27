@@ -1,5 +1,9 @@
 package com.hexaware.roadready.dto;
-
+/*
+ * Author : Shreyasi
+ * Description : DTO for users
+ * Date: 23-11-2024
+ */
 import java.time.LocalDateTime;
 
 import com.hexaware.roadready.entities.Role;

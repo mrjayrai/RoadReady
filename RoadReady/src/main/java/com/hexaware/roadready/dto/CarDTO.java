@@ -1,5 +1,9 @@
 package com.hexaware.roadready.dto;
-
+/*
+ * Author : Pritesh Rai
+ * Description : DTO classes for car
+ * Date: 24-11-2024
+ */
 import java.math.BigDecimal;
 
 public class CarDTO {

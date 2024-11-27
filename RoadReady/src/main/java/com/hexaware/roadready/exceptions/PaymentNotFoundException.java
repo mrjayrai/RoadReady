@@ -1,5 +1,9 @@
 package com.hexaware.roadready.exceptions;
-
+/*
+ * Author : Shreyasi
+ * Description : Exception class for payments
+ * Date: 16-11-2024
+ */
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;

@@ -1,5 +1,9 @@
 package com.hexaware.roadready.dto;
-
+/*
+ * Author : Pritesh Rai
+ * Description : DTO classes for roles
+ * Date: 23-11-2024
+ */
 public class RoleDTO {
 	 private int roleId;
 	    private String roleName;

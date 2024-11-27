@@ -1,5 +1,9 @@
 package com.hexaware.roadready.filter;
-
+/*
+ * Author : Pritesh Rai
+ * Description : Filter for JWT authentication
+ * Date: 16-11-2024
+ */
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,5 +1,9 @@
 package com.hexaware.roadready.entities;
-
+/*
+ * Author : Shreyasi
+ * Description : Entity for Users
+ * Date: 16-11-2024
+ */
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

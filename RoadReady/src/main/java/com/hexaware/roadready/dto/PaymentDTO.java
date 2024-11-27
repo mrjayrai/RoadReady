@@ -1,5 +1,9 @@
 package com.hexaware.roadready.dto;
-
+/*
+ * Author : Rajeshwari
+ * Description : DTO class for payments
+ * Date: 23-11-2024
+ */
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

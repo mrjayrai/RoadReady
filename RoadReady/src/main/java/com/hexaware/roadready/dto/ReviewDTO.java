@@ -1,5 +1,9 @@
 package com.hexaware.roadready.dto;
-
+/*
+ * Author : Rajeshwari
+ * Description : DTO Class for reviews
+ * Date: 23-11-2024
+ */
 
 import java.time.LocalDateTime;
 

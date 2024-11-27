@@ -1,5 +1,9 @@
 package com.hexaware.roadready.entities;
-
+/*
+ * Author : Pritesh Rai
+ * Description : Entity for roles
+ * Date: 16-11-2024
+ */
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

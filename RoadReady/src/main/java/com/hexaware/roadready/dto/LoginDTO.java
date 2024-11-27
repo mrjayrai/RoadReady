@@ -1,5 +1,9 @@
 package com.hexaware.roadready.dto;
-
+/*
+ * Author : Pritesh Rai
+ * Description : DTO class for login credentials
+ * Date: 25-11-2024
+ */
 public class LoginDTO {
 	private String userName;
 	private String userPassword;

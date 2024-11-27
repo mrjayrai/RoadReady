@@ -1,5 +1,9 @@
 package com.hexaware.roadready.entities;
-
+/*
+ * Author : Shreyasi
+ * Description : Entity for Bookings
+ * Date: 16-11-2024
+ */
 import java.math.BigDecimal;
 import java.time.LocalDate;
 

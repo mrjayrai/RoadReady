@@ -1,5 +1,9 @@
 package com.hexaware.roadready.exceptions;
-
+/*
+ * Author : Pritesh Rai
+ * Description : Global Exception Handler
+ * Date: 16-11-2024
+ */
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

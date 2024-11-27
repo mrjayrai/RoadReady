@@ -1,4 +1,9 @@
 package com.hexaware.roadready.entities;
+/*
+ * Author : Rajeshwari
+ * Description : Entity for Reviews
+ * Date: 16-11-2024
+ */
 import java.time.LocalDateTime;
 
 /*

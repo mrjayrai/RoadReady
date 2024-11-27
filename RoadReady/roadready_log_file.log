@@ -70,23 +70,23 @@
 [INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
 [INFO]  :  HikariPool-1 - Shutdown initiated...
 [INFO]  :  HikariPool-1 - Shutdown completed.
-[INFO]  :  Starting RoadReadyApplication using Java 21.0.4 with PID 37856 (D:\adv_java_angular\RoadReady\target\classes started by hp in D:\adv_java_angular\RoadReady)
+[INFO]  :  Starting RoadReadyApplication using Java 21.0.4 with PID 39052 (D:\adv_java_angular\RoadReady\target\classes started by hp in D:\adv_java_angular\RoadReady)
 [INFO]  :  No active profile set, falling back to 1 default profile: "default"
 [INFO]  :  Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-[INFO]  :  Finished Spring Data repository scanning in 115 ms. Found 6 JPA repository interfaces.
+[INFO]  :  Finished Spring Data repository scanning in 103 ms. Found 6 JPA repository interfaces.
 [WARN]  :  Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
 [INFO]  :  Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
 [INFO]  :  Tomcat initialized with port 8080 (http)
 [INFO]  :  Starting service [Tomcat]
 [INFO]  :  Starting Servlet engine: [Apache Tomcat/10.1.31]
 [INFO]  :  Initializing Spring embedded WebApplicationContext
-[INFO]  :  Root WebApplicationContext: initialization completed in 2194 ms
+[INFO]  :  Root WebApplicationContext: initialization completed in 2811 ms
 [INFO]  :  HHH000204: Processing PersistenceUnitInfo [name: default]
 [INFO]  :  HHH000412: Hibernate ORM core version 6.5.3.Final
 [INFO]  :  HHH000026: Second-level cache disabled
 [INFO]  :  No LoadTimeWeaver setup: ignoring JPA class transformer
 [INFO]  :  HikariPool-1 - Starting...
-[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@538905d2
+[INFO]  :  HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@50d666a2
 [INFO]  :  HikariPool-1 - Start completed.
 [WARN]  :  HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
 [WARN]  :  HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
@@ -97,4 +97,8 @@
 [WARN]  :  Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used for username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider.
 [WARN]  :  spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 [INFO]  :  Tomcat started on port 8080 (http) with context path '/'
-[INFO]  :  Started RoadReadyApplication in 8.5 seconds (process running for 9.474)
+[INFO]  :  Started RoadReadyApplication in 9.445 seconds (process running for 11.109)
+[INFO]  :  Application shutdown requested.
+[INFO]  :  Closing JPA EntityManagerFactory for persistence unit 'default'
+[INFO]  :  HikariPool-1 - Shutdown initiated...
+[INFO]  :  HikariPool-1 - Shutdown completed.

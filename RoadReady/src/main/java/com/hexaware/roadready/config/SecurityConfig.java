@@ -1,5 +1,9 @@
 package com.hexaware.roadready.config;
-
+/*
+ * Author : Pritesh Rai
+ * Description : Configuration Class for spring security
+ * Date: 25-11-2024
+ */
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Bean;

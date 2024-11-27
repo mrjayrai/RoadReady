@@ -1,8 +1,8 @@
 package com.hexaware.roadready.repositories;
 /*
- * Author:Rajeshwari
- * Description: Payement Repository
- * Date:14-11-2024
+ * Author : Rajeshwari
+ * Description : Repository/DAO Interface for Payments
+ * Date: 18-11-2024
  */
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

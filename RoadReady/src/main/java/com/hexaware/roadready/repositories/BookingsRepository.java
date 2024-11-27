@@ -1,5 +1,9 @@
 package com.hexaware.roadready.repositories;
-
+/*
+ * Author : Shreyasi
+ * Description : Repository/DAO Interface for Bookings
+ * Date: 18-11-2024
+ */
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;

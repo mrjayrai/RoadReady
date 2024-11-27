@@ -1,5 +1,9 @@
 package com.hexaware.roadready.repositories;
-
+/*
+ * Author : Pritesh Rai
+ * Description : Repository/DAO Interface for roles
+ * Date: 18-11-2024
+ */
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,5 +1,9 @@
 package com.hexaware.roadready.dto;
-
+/*
+ * Author : Shreyasi 
+ * Description : DTO Classes for bookings
+ * Date: 24-11-2024
+ */
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
