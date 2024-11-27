@@ -29,7 +29,6 @@ import com.hexaware.roadready.entities.Users;
 import com.hexaware.roadready.services.IUserService;
 import com.hexaware.roadready.services.JWTService;
 
-
 import jakarta.validation.Valid;
 
 @RestController

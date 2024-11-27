@@ -46,10 +46,21 @@ public class ReviewsServiceImp implements IReviewsService {
 	
 
 	@Override
-	public Reviews updateReview(Reviews review) {
+	public Reviews updateReview(ReviewDTO review) {
 		// TODO Auto-generated method stub
 		logger.info("Review Details Updated");
-		return reviewRepository.save(review);
+		Reviews addReview=new Reviews();
+		int reviewId=review.getReviewId();
+		int bookingId=review.getBookingId();
+		Bookings booking=new Bookings(bookingId);
+		addReview.setBooking(booking);
+		int userId=review.getUserId();
+		Users user=new Users(userId);
+		addReview.setUser(user);
+		addReview.setRating(review.getRating());
+		addReview.setReviewText(review.getReviewText());
+		addReview.setReviewDate(review.getReviewDate());
+		return reviewRepository.save(addReview);
 	}
 
 	@Override

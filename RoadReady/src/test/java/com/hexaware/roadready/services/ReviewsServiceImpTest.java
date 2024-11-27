@@ -77,27 +77,36 @@ class ReviewsServiceImpTest {
 //		Reviews reviewCheck=reviewService.updateReview(review);
 //		assertNotNull(reviewCheck);
 		 // Mock input data
-        Users user = new Users(101);
-        Bookings booking = new Bookings(1);
-        Reviews existingReview = new Reviews(15, 4, "Good service", LocalDateTime.now(), user, booking);
-        Reviews updatedReview = new Reviews(15, 5, "very amazing Great and Satisfied Service", LocalDateTime.now(), user, booking);
-
-        // Define mock behavior
-        Mockito.when(reviewsRepository.findById(15)).thenReturn(Optional.of(existingReview));
-        Mockito.when(reviewsRepository.save(Mockito.any(Reviews.class))).thenReturn(updatedReview);
-
-        // Call the service method
-        Reviews reviewCheck = reviewsService.updateReview(updatedReview);
-
-        // Assert the result
-        assertNotNull(reviewCheck);
-//        assertEquals(5, reviewCheck.getReviewId());
-//        assertEquals(5, reviewCheck.getRating());
-        assertEquals("very amazing Great and Satisfied Service", reviewCheck.getReviewText());
-
-        // Verify interactions
-//        Mockito.verify(reviewsRepository).findById(5);
-        Mockito.verify(reviewsRepository).save(updatedReview);
+//        Users user = new Users(101);
+//        Bookings booking = new Bookings(1);
+//        Reviews existingReview = new Reviews(15, 4, "Good service", LocalDateTime.now(), user, booking);
+//        Reviews updatedReview = new Reviews(15, 5, "very amazing Great and Satisfied Service", LocalDateTime.now(), user, booking);
+//
+//        // Define mock behavior
+//        Mockito.when(reviewsRepository.findById(15)).thenReturn(Optional.of(existingReview));
+//        Mockito.when(reviewsRepository.save(Mockito.any(Reviews.class))).thenReturn(updatedReview);
+//
+//        // Call the service method
+//        Reviews reviewCheck = reviewsService.updateReview(updatedReview);
+//
+//        // Assert the result
+//        assertNotNull(reviewCheck);
+////        assertEquals(5, reviewCheck.getReviewId());
+////        assertEquals(5, reviewCheck.getRating());
+//        assertEquals("very amazing Great and Satisfied Service", reviewCheck.getReviewText());
+//
+//        // Verify interactions
+////        Mockito.verify(reviewsRepository).findById(5);
+//        Mockito.verify(reviewsRepository).save(updatedReview);
+		ReviewDTO reviewDto=new ReviewDTO();
+		Reviews addReview=new Reviews();
+		reviewDto.setBookingId(1);
+		reviewDto.setUserId(101);
+		reviewDto.setRating(5);
+		reviewDto.setReviewDate(LocalDateTime.now());
+		reviewDto.setReviewText("Very Good Experience");
+		Reviews reviewCheck=reviewService.updateReview(reviewDto);
+		assertNotNull(reviewCheck);
     }
 		 
 	

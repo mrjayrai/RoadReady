@@ -97,7 +97,7 @@ public class ReviewsRestController {
 	}
 	
 	@PutMapping("/update")
-	private Reviews updateReview(@Valid @RequestBody Reviews review) {
+	private Reviews updateReview(@Valid @RequestBody ReviewDTO review) {
 		return reviewService.updateReview(review);
 	}
 	

@@ -15,7 +15,7 @@ public interface IReviewsService {
     Reviews addReview(ReviewDTO reviewDto);
 
     // Update an existing review (by reviewId)
-    Reviews updateReview(Reviews review);
+    Reviews updateReview(ReviewDTO review);
 
     // Delete a review by its ID
     void deleteReview(int reviewId);
