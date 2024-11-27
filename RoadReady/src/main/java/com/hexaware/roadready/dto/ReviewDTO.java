@@ -8,7 +8,7 @@ package com.hexaware.roadready.dto;
 import java.time.LocalDateTime;
 
 public class ReviewDTO {
-//    private int reviewId;
+    private int reviewId;
     private int rating; // Rating between 1 and 5
     private String reviewText; // Textual feedback, max 500 characters
     private LocalDateTime reviewDate; // Date and time of the review
@@ -27,15 +27,26 @@ public class ReviewDTO {
         this.userId = userId;
         this.bookingId = bookingId;
     }
+    
 
-    // Getters and Setters
-//    public int getReviewId() {
-//        return reviewId;
-//    }
-//
-//    public void setReviewId(int reviewId) {
-//        this.reviewId = reviewId;
-//    }
+    public ReviewDTO(int reviewId, int rating, String reviewText, LocalDateTime reviewDate, int userId, int bookingId) {
+		super();
+		this.reviewId = reviewId;
+		this.rating = rating;
+		this.reviewText = reviewText;
+		this.reviewDate = reviewDate;
+		this.userId = userId;
+		this.bookingId = bookingId;
+	}
+
+	// Getters and Setters
+    public int getReviewId() {
+        return reviewId;
+    }
+
+    public void setReviewId(int reviewId) {
+        this.reviewId = reviewId;
+    }
 
     public int getRating() {
         return rating;

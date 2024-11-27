@@ -1,41 +1,21 @@
-package com.hexaware.roadready.services;
-/*
- * Author : Rajeshwari
- * Description : Service Implementation for payments
- * Date: 18-11-2024
- */
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
+package com.hexaware.roadreay.service;
 import java.util.List;
-import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
 
-import com.hexaware.roadready.dto.PaymentDTO;
-import com.hexaware.roadready.entities.Bookings;
-import com.hexaware.roadready.entities.Payments;
-import com.hexaware.roadready.entities.Reviews;
-import com.hexaware.roadready.entities.Role;
-import com.hexaware.roadready.entities.Users;
-import com.hexaware.roadready.exceptions.InvalidDataException;
-import com.hexaware.roadready.exceptions.NotFoundException;
-import com.hexaware.roadready.entities.Payments.PaymentMethod;
-import com.hexaware.roadready.entities.Payments.PaymentStatus;
-import com.hexaware.roadready.repositories.BookingsRepository;
-import com.hexaware.roadready.repositories.PaymentRepository;
-//import com.hexaware.springrestjpa.service.EmployeeServiceImp;
-import com.hexaware.roadready.repositories.UsersRepository;
-
-import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.NotNull;
+import com.hexaware.roadreay.dto.PaymentDTO;
+import com.hexaware.roadreay.enitity.Bookings;
+import com.hexaware.roadreay.enitity.Payments;
+import com.hexaware.roadreay.enitity.Payments.PaymentStatus;
+import com.hexaware.roadreay.enitity.Users;
+import com.hexaware.roadreay.exception.NotFoundException;
+import com.hexaware.roadreay.repository.BookingsRepository;
+import com.hexaware.roadreay.repository.PaymentRepository;
+import com.hexaware.roadreay.repository.UsersRepository;
 @Service
 public class PaymentServiceImp implements IPaymentService {
 	
@@ -43,8 +23,6 @@ public class PaymentServiceImp implements IPaymentService {
 	PaymentRepository paymentRepository;
 	UsersRepository usersRepository;
 	BookingsRepository bookingsRepository;
-	@Autowired
-	RestTemplate restTemplate;
 	
 	Logger logger =	   LoggerFactory.getLogger(PaymentServiceImp.class);
 
@@ -114,10 +92,7 @@ public class PaymentServiceImp implements IPaymentService {
 	public List<Payments> getAllPayments() {
 		// TODO Auto-generated method stub
 		logger.info("All Payment get ");
-//		  return paymentRepository.findAll();
-		String url = "http://localhost:8181/api/payments/getallpayments" ;
-		List<Payments> paymentList = Arrays.asList(restTemplate.getForObject(url, Payments[].class));
-		return paymentList;
+		  return paymentRepository.findAll();
 	}
 
 	@Override
