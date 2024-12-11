@@ -1,0 +1,52 @@
+<p>display-review-by-id works!</p>
+<h1 class="header">SEARCH_BY_REVIEW_ID</h1>
+
+<div class="container mt-4">
+  <!-- Search Form -->
+  <form class="form-inline d-flex justify-content-center mb-4" #formData="ngForm" (ngSubmit)="searchByReviewId(formData.value)">
+    <input 
+      class="form-control mr-2 col-md-6" 
+      type="search" 
+      placeholder="Search Review by ReviewID" 
+      aria-label="Search" 
+      name="reviewId" 
+      ngModel
+      required 
+    />
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form>
+  <div *ngIf="searchError" class="alert alert-danger mt-3">
+    Review Not Found for the given Review ID. Please enter a valid Review ID.
+  </div>
+
+  <div *ngIf="reviewList != null">
+    <!-- Table Container -->
+    <div class="container col-lg-9">
+      <!-- No Payment Data Message -->
+      <div *ngIf="reviewList.length==0" class="alert alert-info text-center mt-3">
+        No payments found. Please fetch the data.
+      </div>
+  <!-- {{reviewList | json}} -->
+  <table  class="table table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Review Id</th>
+        <th scope="col">Rating</th>
+        <th scope="col">Review Text</th>
+        <th scope="col">User ID</th>
+        <th scope="col">Booking ID</th>
+        <th scope="col">Review Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let review of reviewList">
+        <td>{{ review.reviewId }}</td>
+        <td>{{ review.rating }}</td>
+        <td>{{ review.reviewText }}</td>
+        <td>{{ review.user.userId }}</td>  <!-- Assuming userId is a simple field -->
+        <td>{{ review.booking.bookingId }}</td>  <!-- Assuming bookingId is a simple field -->
+        <td>{{ review.reviewDate | date: 'short' }}</td>  <!-- Format the review date -->
+      </tr>
+    </tbody>
+  </table>
+ </div>
