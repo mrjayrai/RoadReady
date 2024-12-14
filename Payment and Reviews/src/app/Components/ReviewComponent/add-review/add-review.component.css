@@ -1,0 +1,17 @@
+.is-invalid {
+    border-color: #dc3545;
+  }
+  
+  .invalid-feedback {
+    display: block;
+  }
+  .container{
+    WIDTH: 628PX;
+    padding: 38px 96px;
+    border-radius: 10px;
+    border-style: groove;
+
+}
+#RAJS{
+  MARGIN-TOP: -6PX;
+}

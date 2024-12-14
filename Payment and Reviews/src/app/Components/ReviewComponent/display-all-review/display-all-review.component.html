@@ -1,0 +1,51 @@
+<p>display-all-review works!</p>
+<!-- display-all-reviews.component.html -->
+<div class="container mt-5">
+    <h2>All Reviews</h2>
+  
+    <!-- Loading Spinner -->
+    <div *ngIf="isLoading" class="text-center">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
+  
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+      {{ errorMessage }}
+    </div>
+    <div class="container mt-4">
+        <button *ngIf="showButton" (click)="showAllReviews()" class="btn btn-primary mb-3">Show All Reviews</button>
+    <!-- Reviews Table -->
+    <table *ngIf="!isLoading && !errorMessage" class="table table-bordered">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Review Id</th>
+          <th scope="col">Rating</th>
+          <th scope="col">Review Text</th>
+          <th scope="col">User ID</th>
+          <th scope="col">Booking ID</th>
+          <th scope="col">Review Date</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <!-- {{reviews}} -->
+      <tbody>
+        <tr *ngFor="let review of reviews">
+          <td>{{ review.reviewId }}</td>
+          <td>{{ review.rating }}</td>
+          <td>{{ review.reviewText }}</td>
+          <td>{{ review.user.userId }}</td> <!-- Safely accessing userId -->
+          <td>{{ review.booking.bookingId }}</td> <!-- Safely accessing bookingId -->
+          <td>{{ review.reviewDate | date: 'short' }}</td>
+          <td>
+            <button type="button" (click)="deleteById(review.reviewId)" class="btn btn-danger btn-sm">
+              Delete
+            </button>
+          </td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</div>

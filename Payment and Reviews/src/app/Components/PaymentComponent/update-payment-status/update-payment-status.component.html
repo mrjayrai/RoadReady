@@ -1,0 +1,56 @@
+<div class="update-payment-status">
+ 
+  <!-- Success Message -->
+  <div *ngIf="successMessage" class="alert alert-success">
+    {{ successMessage }}
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <form [formGroup]="updateForm" (ngSubmit)="onSubmit()" class="container">
+    <h3>Update Payment Status</h3>
+
+    <!-- Payment ID -->
+
+    <div class="form-group">
+      <label for="paymentId">Payment ID</label>
+      <input
+        id="paymentId"
+        type="number"
+        class="form-control"
+        formControlName="paymentId"
+        [class.is-invalid]="updateForm.get('paymentId')?.invalid && updateForm.get('paymentId')?.touched"
+      />
+      <div *ngIf="updateForm.get('paymentId')?.invalid && updateForm.get('paymentId')?.touched" class="invalid-feedback">
+        Payment ID is required and must be a number.
+      </div>
+    </div>
+
+    <!-- Status -->
+    <div class="form-group">
+      <label for="status">Status</label>
+      <select
+        id="status"
+        class="form-control"
+        formControlName="status"
+        [class.is-invalid]="updateForm.get('status')?.invalid && updateForm.get('status')?.touched"
+      >
+        <option value="" disabled>Select a status</option>
+        <option value="PENDING">PENDING</option>
+        <option value="PAID">PAID</option>
+        <option value="FAILED">FAILED</option>
+      </select>
+      <div *ngIf="updateForm.get('status')?.invalid && updateForm.get('status')?.touched" class="invalid-feedback">
+        Status is required.
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+     <div class="but">
+      <button type="submit" class="btn btn-primary" [disabled]="isSubmitting || updateForm.invalid"> Update Status</button>
+     </div>
+  </form>
+</div>

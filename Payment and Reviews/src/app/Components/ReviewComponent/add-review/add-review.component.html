@@ -1,0 +1,96 @@
+<div class="container mt-5">
+  <h2>Add Review</h2>
+
+  <!-- Add Review Form -->
+  <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+    
+    <!-- Review ID -->
+    <div class="mb-3">
+      <label for="reviewId" class="form-label">Review ID</label>
+      <input 
+        id="reviewId"
+        type="number"
+        formControlName="reviewId"
+        class="form-control"
+        [ngClass]="{'is-invalid': f('reviewId')?.invalid && f('reviewId')?.touched}" />
+      <div *ngIf="f('reviewId')?.invalid && f('reviewId')?.touched" class="invalid-feedback">
+        Review ID is required.
+      </div>
+    </div>
+
+    <!-- Rating -->
+    <div class="mb-3">
+      <label for="rating" class="form-label">Rating (1-5)</label>
+      <input 
+        id="rating"
+        type="number"
+        formControlName="rating"
+        class="form-control"
+        [ngClass]="{'is-invalid': f('rating')?.invalid && f('rating')?.touched}" />
+      <div *ngIf="f('rating')?.invalid && f('rating')?.touched" class="invalid-feedback">
+        <div *ngIf="f('rating')?.hasError('required')">Rating is required.</div>
+        <div *ngIf="f('rating')?.hasError('min')">Rating must be at least 1.</div>
+        <div *ngIf="f('rating')?.hasError('max')">Rating must be at most 5.</div>
+      </div>
+    </div>
+
+    <!-- Review Text -->
+    <div class="mb-3">
+      <label for="reviewText" class="form-label">Review Text (max 500 characters)</label>
+      <textarea 
+        id="reviewText"
+        formControlName="reviewText"
+        class="form-control"
+        [ngClass]="{'is-invalid': f('reviewText')?.invalid && f('reviewText')?.touched}"
+        rows="4"></textarea>
+      <div *ngIf="f('reviewText')?.invalid && f('reviewText')?.touched" class="invalid-feedback">
+        <div *ngIf="f('reviewText')?.hasError('maxlength')">Review text cannot exceed 500 characters.</div>
+      </div>
+    </div>
+
+    <!-- Review Date -->
+    <div class="mb-3">
+      <label for="reviewDate" class="form-label">Review Date</label>
+      <input 
+        id="reviewDate"
+        type="datetime-local"
+        formControlName="reviewDate"
+        class="form-control"
+        [ngClass]="{'is-invalid': f('reviewDate')?.invalid && f('reviewDate')?.touched}" />
+      <div *ngIf="f('reviewDate')?.invalid && f('reviewDate')?.touched" class="invalid-feedback">
+        Review Date is required.
+      </div>
+    </div>
+
+    <!-- User ID -->
+    <div class="mb-3">
+      <label for="userId" class="form-label">User ID</label>
+      <input 
+        id="userId"
+        type="text"
+        formControlName="userId"
+        class="form-control"
+        [ngClass]="{'is-invalid': f('userId')?.invalid && f('userId')?.touched}" />
+      <div *ngIf="f('userId')?.invalid && f('userId')?.touched" class="invalid-feedback">
+        User ID is required.
+      </div>
+    </div>
+
+    <!-- Booking ID -->
+    <div class="mb-3">
+      <label for="bookingId" class="form-label">Booking ID</label>
+      <input 
+        id="bookingId"
+        type="text"
+        formControlName="bookingId"
+        class="form-control"
+        [ngClass]="{'is-invalid': f('bookingId')?.invalid && f('bookingId')?.touched}" />
+      <div *ngIf="f('bookingId')?.invalid && f('bookingId')?.touched" class="invalid-feedback">
+        Booking ID is required.
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary" [disabled]="reviewForm.invalid">Submit</button>
+  </form>
+</div>
