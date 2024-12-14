@@ -1,0 +1,49 @@
+<!-- <p>home-payment works!</p> -->
+<!-- <p>home works!</p> -->
+<!-- <a routerLink="/addpayment">Insert Payment</a><br>
+<a routerLink="/displayallpayments">Display Payment</a><br>
+<a routerLink="/searchbypaymentid">Display Payment by Payment ID</a><br>
+<a routerLink="/searchbyuserid">Display Payment by User ID</a><br>
+<a routerLink="/updatepaymentstatus">Update Payment Status</a>
+
+<router-outlet></router-outlet> -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Payment Manager</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/addpayment">Insert Payment</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/displayallpayments">Display Payments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/searchbypaymentid">Search by Payment ID</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/searchbyuserid">Search by User ID</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/updatepaymentstatus">Update Payment Status</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container mt-4">
+    <router-outlet></router-outlet>
+  </div>
+  

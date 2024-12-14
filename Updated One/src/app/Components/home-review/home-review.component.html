@@ -1,0 +1,46 @@
+<!-- <p>home-review works!</p> -->
+<!-- <a routerLink="/addreview">Insert Review</a><br>
+<a routerLink="/displayallreviews">Display All Reviews</a><br>
+<a routerLink="/displaybyreviewid">Display By Review Id</a><br>
+<a routerLink="/updatereview">Update Review</a><br>
+<a routerLink="/displaybyuserid">Search Review By userId</a><br> -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Review Manager</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/addreview" routerLinkActive="active">Insert Review</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/displayallreviews" routerLinkActive="active">Display All Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/displaybyreviewid" routerLinkActive="active">Display By Review ID</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/updatereview" routerLinkActive="active">Update Review</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/displaybyuserid" routerLinkActive="active">Search Review By User ID</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container mt-4">
+    <router-outlet></router-outlet>
+  </div>
+  

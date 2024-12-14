@@ -1,0 +1,54 @@
+<p>display-payment-by-user-id works!</p>
+<div class="container mt-4">
+    <!-- Search Form -->
+    <form class="form-inline d-flex justify-content-center mb-4" #formData="ngForm" (ngSubmit)="searchByUserId(formData.value)">
+      <input 
+        class="form-control mr-2 col-md-6" 
+        type="search" 
+        placeholder="Search Payment by UserID" 
+        aria-label="Search" 
+        name="user" 
+        ngModel
+        required 
+      />
+      <button class="btn btn-outline-success" type="submit">Search</button>
+       <div *ngIf="searchError" class="alert alert-danger mt-3">
+    Payment Not Found for the given User ID. Please enter a valid User ID.
+  </div>
+    </form> 
+    <!-- {{paymentList | json}} -->
+    <table class="table table-hover table-bordered table-success">  
+        <thead class="thead-dark">
+          <tr>
+            <th>Payment ID</th>
+            <th>Amount</th>
+            <th>Payment Date</th>
+            <th>Payment Method</th>
+            <th>Status</th>
+            <th>User ID</th>
+            <th>Booking ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let payment of paymentList ">
+            <td>{{payment.paymentId}}</td>
+            <td>{{ payment.amount | currency:'INR' }}</td>
+            <td>{{ payment.paymentDate | date:'short' }}</td>
+            <td>{{ payment.paymentMethod }}</td>
+            <td>
+              <span [ngClass]="{
+                'badge badge-warning': payment.status === 'PENDING',
+                'badge badge-success': payment.status === 'PAID',
+                'badge badge-danger': payment.status === 'FAILED'
+              }">
+                {{ payment.status }}
+              </span>
+            </td>
+            <td>{{ payment.user.userId }}</td>
+            <td>{{ payment.booking.bookingId }}</td>
+          </tr>
+          <tr *ngIf="paymentList==null">
+            <td colspan="7" class="text-center text-muted">No payment data available. Please search by Payment ID.</td>
+          </tr>
+        </tbody>
+      </table>

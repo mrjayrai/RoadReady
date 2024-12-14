@@ -1,0 +1,4 @@
+.table-bordered td, .table-bordered th {
+    TEXT-ALIGN: center;
+    border: 1px solid #dee2e6;
+}
