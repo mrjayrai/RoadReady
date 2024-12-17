@@ -1,0 +1,30 @@
+/* .container{
+    WIDTH: 597PX;
+    padding: 29px 96px;
+    border-radius: 10px;
+    border-style: groove;
+
+} */
+h3 {
+    padding-bottom: 16px;
+    text-align: center;
+}
+.but{
+    text-align:center ;
+    padding-top: 10px;
+}
+.container {
+    WIDTH: 597PX;
+    padding: 29px 96px;
+    border-radius: 10px;
+    border-style: groove;
+    /* margin-top: 130px; */
+}
+.container{
+    background-color: lightgray
+}
+
+element.style {
+    background: lightblue;
+}
+

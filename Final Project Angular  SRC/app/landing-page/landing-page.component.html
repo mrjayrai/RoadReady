@@ -1,0 +1,123 @@
+<!-- Landing Page for Car Rental Website -->
+<div class="container-fluid p-0">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">RoadReady</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#featured-cars">Cars</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about-section">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/login">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  
+    <!-- Hero Section -->
+    <div class="hero-section text-white text-center bg-dark py-5">
+      <h1 class="display-4">Find Your Perfect Car Rental</h1>
+      <p class="lead">Affordable and reliable car rentals at your fingertips.</p>
+      <a href="#" class="btn btn-primary btn-lg mt-3">Book Now</a>
+    </div>
+  
+    <!-- Search Section -->
+    <div class="search-section bg-light py-4">
+      <div class="container">
+        <form class="row g-3">
+          <div class="col-md-4">
+            <label for="pickupLocation" class="form-label">Pick-up Location</label>
+            <input
+              type="text"
+              class="form-control"
+              id="pickupLocation"
+              placeholder="Enter city or airport"
+            />
+          </div>
+          <div class="col-md-4">
+            <label for="pickupDate" class="form-label">Pick-up Date</label>
+            <input type="date" class="form-control" id="pickupDate" />
+          </div>
+          <div class="col-md-4">
+            <label for="dropoffDate" class="form-label">Drop-off Date</label>
+            <input type="date" class="form-control" id="dropoffDate" />
+          </div>
+          <div class="col-12 text-center mt-3">
+            <button type="submit" class="btn btn-success btn-lg">Search Cars</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  
+    <!-- Featured Cars Section -->
+    <div class="featured-cars py-5" id="featured-cars">
+      <div class="container">
+        <h2 class="text-center mb-4">Featured Cars</h2>
+        <div class="row g-4">
+          <div class="col-md-4" *ngFor="let car of featuredCars">
+            <div class="card h-100">
+              <img [src]="car.image" class="card-img-top" alt="{{ car.name }}" />
+              <div class="card-body">
+                <h5 class="card-title">{{ car.name }}</h5>
+                <p class="card-text">{{ car.description }}</p>
+              </div>
+              <div class="card-footer text-center">
+                <a href="#" class="btn btn-outline-primary">Rent Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- About Section -->
+    <div
+      class="about-section bg-dark text-white py-5"
+      id="about-section"
+    >
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <h2>About Us</h2>
+            <p>
+              We offer a wide range of cars for rent at the most affordable prices.
+              Whether you need a car for a family trip or business, we have you
+              covered!
+            </p>
+          </div>
+          <div class="col-md-6 text-center">
+            <img
+              src="../../assets/images/1.jpeg"
+              alt="About Us Image"
+              class="img-fluid rounded"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Footer -->
+    <footer class="bg-secondary text-white text-center py-3">
+      <p class="mb-0">&copy; 2024 Car Rentals. All rights reserved.</p>
+    </footer>
+  </div>

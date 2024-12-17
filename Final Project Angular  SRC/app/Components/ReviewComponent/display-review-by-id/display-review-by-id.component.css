@@ -1,0 +1,8 @@
+.Bg {
+    width: 82vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    background-image: url('../../../../assets/images/review2.jpg'); /* Set the background image */
+    background-size:initial; /* Ensure the image covers the entire div */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+  }

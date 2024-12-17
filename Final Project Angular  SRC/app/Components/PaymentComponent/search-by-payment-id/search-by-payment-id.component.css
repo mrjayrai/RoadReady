@@ -1,0 +1,40 @@
+.mb-1, .my-1 {
+    text-align: center;
+    padding: 11px;
+    margin-bottom: 0.25rem !important;
+}
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    align-content: center;
+    flex-direction: row;
+    justify-content: center;
+}
+.bg-success , .bg-warning, .bg-danger {
+    padding: 15px;
+    /* background-color: #28a745 !important; */
+    text-align: center;
+}
+p {
+    margin-top: 0;
+    margin-bottom: 9px;
+}
+.Bg {
+    width: 82vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    background-image: url('../../../../assets/images/pay7.jpg'); /* Set the background image */
+    background-size:initial; /* Ensure the image covers the entire div */
+     /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating the image */
+    margin-top: 30px;
+    margin-left: 190px;
+  }
+  .body{
+    background-color: aliceblue;
+  }

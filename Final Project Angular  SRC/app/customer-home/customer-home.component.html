@@ -1,0 +1,104 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">User</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/addreview" routerLinkActive="active">Insert Review</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="/displayallreviews" routerLinkActive="active">Display All Reviews</a>
+        </li> -->
+       
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="/displaybyreviewid" routerLinkActive="active">Display By Review ID</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/updatereview" routerLinkActive="active">Update Review</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/displaybyuserid" routerLinkActive="active">Search Review By User ID</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/addpayment">Insert Payment</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="/displaybybookingid" routerLinkActive="active">Search Review By Booking ID</a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="d-flex">
+    <!-- Sidebar / Sidenav -->
+    <div class="bg-dark text-white vh-100 p-3" style="width: 250px;">
+      <h5 class="text-center mb-2">Customer Dashboard</h5>
+      <nav class="nav flex-column m-2 mt-4" style="cursor: pointer;">
+        <a class="nav-link text-white" [class.active]="activeTab === 'dashboard'" (click)="activeTab = 'dashboard'">Dashboard</a>
+        <a class="nav-link text-white" [class.active]="activeTab === 'users'" (click)="activeTab = 'users'" style="display: none;">Users</a>
+        <!-- <a class="nav-link text-white" [class.active]="activeTab === 'reports'" (click)="activeTab = 'reports'" style="display: none;">Reports</a> -->
+        <!-- <a class="nav-link text-white" [class.active]="activeTab === 'settings'" (click)="activeTab = 'settings'" style="display: none;">Settings</a> -->
+        <!-- View Bookings Tab -->
+        <a class="nav-link text-white" [class.active]="activeTab === 'viewBooking'" (click)="activeTab = 'viewBooking'" >Bookings</a>
+        <!-- View Cars Tab -->
+        <a class="nav-link text-white" [class.active]="activeTab === 'viewCars'" (click)="activeTab = 'viewCars'" style="display: none;" >View Cars</a>
+        <a class="nav-link text-white" [class.active]="activeTab === 'viewUsers'" (click)="activeTab = 'viewUsers'" style="display: none;" >View Users</a>
+      </nav>
+    </div>
+  
+    <!-- Main Content -->
+    <div class="flex-grow-1 p-4">
+      <!-- Dashboard Tab -->
+      <div *ngIf="activeTab === 'dashboard'">
+        <h2>Dashboard</h2>
+        <!-- <app-admin-tab (tabChanged)="setActiveTab($event)"></app-admin-tab> -->
+         <!-- <app-user-tab></app-user-tab> -->
+      </div>
+  
+      <!-- Users Tab -->
+      <div *ngIf="activeTab === 'users'">
+        <h2>Users</h2>
+        <p>Manage your users here.</p>
+        <app-user-list></app-user-list>
+      </div>
+  
+      <!-- Reports Tab -->
+      <!-- <div *ngIf="activeTab === 'reports'">
+        <h2>Reports</h2>
+        <p>View reports and analytics.</p>
+      </div> -->
+  
+      <!-- Settings Tab -->
+      <!-- <div *ngIf="activeTab === 'settings'">
+        <h2>Settings</h2>
+        <p>Configure your application settings.</p>
+      </div> -->
+  
+      <!-- View Bookings Tab -->
+      <div *ngIf="activeTab === 'viewBooking'">
+        <h2>Bookings </h2>
+        <app-user-booking-tab (tabChanged)="setActiveTab($event)"></app-user-booking-tab>
+      </div>
+
+      <div *ngIf="activeTab === 'viewCars'">
+        <app-car-list></app-car-list>
+      </div>
+
+      <div *ngIf = "activeTab === 'viewUsers'">
+        <app-user-list></app-user-list>
+      </div>
+    </div>
+  </div>
+  

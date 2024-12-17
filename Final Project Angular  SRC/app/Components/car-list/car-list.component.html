@@ -1,0 +1,39 @@
+<div class="container mx-auto mt-4">
+    <h2 class="text-center mb-4">Car List</h2>
+  
+    <div class="row flex-nowrap overflow-x-auto">
+      <div class="col-md-4 mb-4" *ngFor="let car of paginatedCars">
+        <div class="card" style="width: 18rem;">
+            <img 
+  [src]="car.imagePath ? (environment.imageUrl + car.imagePath) : 'https://via.placeholder.com/286x180?text=No+Image'" 
+  class="fixed-img" 
+  alt="Car Image">
+          <!-- <img [src]="car.imagePath ? (environment.imageUrl + car.imagePath) : 'https://via.placeholder.com/286x180?text=No+Image'" class="card-img-top" alt="Car Image"> -->
+          <div class="card-body">
+            <h5 class="card-title">{{ car.carCompany }}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{ car.carModel }} | {{ car.carYear }} | {{ car.licensePlate }}</h6>
+            <p class="card-text">{{ car.carType }}</p>
+            <p class="card-text"><strong>Price Per Day: {{ car.pricePerDay | currency:'INR':'symbol' }}</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Pagination Controls -->
+    <nav aria-label="Car List Pagination">
+      <ul class="pagination justify-content-center">
+        <li class="page-item" [class.disabled]="currentPage === 1">
+          <button class="page-link" (click)="previousPage()">Previous</button>
+        </li>
+        <li class="page-item" *ngFor="let page of totalPagesArray">
+          <button class="page-link" (click)="goToPage(page)" [class.active]="currentPage === page">
+            {{ page }}
+          </button>
+        </li>
+        <li class="page-item" [class.disabled]="currentPage === totalPages">
+          <button class="page-link" (click)="nextPage()">Next</button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  
