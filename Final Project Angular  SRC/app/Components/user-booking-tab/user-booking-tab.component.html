@@ -1,0 +1,205 @@
+<!-- <div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3>Booking Management</h3>
+    <button type="button" class="btn btn-success" (click)="toggleBookingForm()">Book Now!</button>
+  </div>
+
+  
+  <div *ngIf="showBookingForm">
+    <form [formGroup]="bookingForm" (ngSubmit)="submitBooking()" class="bg-light p-4 rounded shadow-sm">
+      <h4 class="mb-4">Fill in the Booking Details</h4>
+      
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="startDate" class="form-label">Start Date</label>
+          <input type="date" id="startDate" class="form-control" formControlName="startDate"  required>
+          
+        </div>
+        <div class="col-md-6">
+          <label for="endDate" class="form-label">End Date</label>
+          <input type="date" id="endDate" class="form-control" formControlName="endDate"  required>
+          
+        </div>
+      </div>
+      
+      <div class="mb-3">
+        <label for="car" class="form-label">Select Car</label>
+        <select id="car" class="form-control" formControlName="car" (change)="onCarSelect($event)" required>
+          <option *ngFor="let car of cars" [value]="car.carId">{{ car.carCompany }} - {{ car.carModel }}</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="totalPrice" class="form-label">Total Price (INR)</label>
+        <input 
+          type="number" 
+          id="totalPrice" 
+          class="form-control" 
+          formControlName="totalPrice" 
+          [value]="totalPrice" 
+          [disabled]="true">
+      </div>
+      
+
+      <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary" style="margin-left: 2px;">Submit Booking</button>
+        <button type="button" class="btn btn-danger" (click)="hideBookingForm()" style="margin-left: 2px;">Cancel</button>
+      </div>
+    </form>
+  </div> -->
+<!-- 
+  <div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3>Booking Management</h3>
+      <button type="button" class="btn btn-success" (click)="toggleBookingForm()">Book Now!</button>
+    </div>
+  
+    
+    <div *ngIf="showBookingForm">
+      <form [formGroup]="bookingForm" (ngSubmit)="submitBooking()" class="bg-light p-4 rounded shadow-sm">
+        <h4 class="mb-4">Fill in the Booking Details</h4>
+  
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="startDate" class="form-label">Start Date</label>
+            <input type="date" id="startDate" class="form-control" formControlName="startDate" required>
+          </div>
+          <div class="col-md-6">
+            <label for="endDate" class="form-label">End Date</label>
+            <input type="date" id="endDate" class="form-control" formControlName="endDate" required>
+          </div>
+        </div>
+  
+        <div class="mb-3">
+          <label for="car" class="form-label">Select Car</label>
+          <select id="car" class="form-control" formControlName="car" (change)="onCarSelect($event)" required>
+            <option *ngFor="let car of cars" [value]="car.carId">{{ car.carCompany }} - {{ car.carModel }}</option>
+          </select>
+        </div>
+  
+        <div class="mb-3">
+          <label for="totalPrice" class="form-label">Total Price (INR)</label>
+          <input type="number" id="totalPrice" class="form-control" formControlName="totalPrice" [value]="totalPrice" [disabled]="true">
+        </div>
+  
+        <div class="d-flex justify-content-end">
+          <button type="submit" class="btn btn-primary" style="margin-left: 2px;">Submit Booking</button>
+          <button type="button" class="btn btn-danger" (click)="hideBookingForm()" style="margin-left: 2px;">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  
+  <div class="table-responsive mt-5" *ngIf="!showBookingForm">
+    <table class="table table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Booking ID</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Status</th>
+          <th>Total Price</th>
+          <th>Car</th>
+          <th>User</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="!bookings || bookings.length === 0">
+          <td colspan="7" class="text-center">No bookings yet</td>
+        </tr>
+        <tr *ngFor="let booking of bookings">
+          <td>{{ booking.bookingId }}</td>
+          <td>{{ booking.startDate | date: 'shortDate' }}</td>
+          <td>{{ booking.endDate | date: 'shortDate' }}</td>
+          <td [ngClass]="{
+            'text-success': booking.status === 'Confirmed',
+            'text-warning': booking.status === 'Pending',
+            'text-danger': booking.status === 'Cancelled'
+          }">{{ booking.status }}</td>
+          <td>{{ booking.totalPrice | currency: 'INR':'symbol' }}</td>
+          <td>{{ booking.car.carCompany }} ({{ booking.car.carModel }})</td>
+          <td>{{ booking.user.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div> -->
+
+
+<div class="container mt-5">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3>Booking Management</h3>
+    <button type="button" class="btn btn-success" (click)="toggleBookingForm()">Book Now!</button>
+  </div>
+
+  <!-- Booking Form -->
+  <div *ngIf="showBookingForm">
+    <form [formGroup]="bookingForm" (ngSubmit)="submitBooking()" class="bg-light p-4 rounded shadow-sm">
+      <h4 class="mb-4">Fill in the Booking Details</h4>
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="startDate" class="form-label">Start Date</label>
+          <input type="date" id="startDate" class="form-control" formControlName="startDate" required>
+        </div>
+        <div class="col-md-6">
+          <label for="endDate" class="form-label">End Date</label>
+          <input type="date" id="endDate" class="form-control" formControlName="endDate" required>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="car" class="form-label">Select Car</label>
+        <select id="car" class="form-control" formControlName="car" (change)="onCarSelect($event)" required>
+          <option *ngFor="let car of cars" [value]="car.carId">{{ car.carCompany }} - {{ car.carModel }}</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="totalPrice" class="form-label">Total Price (INR)</label>
+        <input type="number" id="totalPrice" class="form-control" formControlName="totalPrice" [value]="totalPrice" [disabled]="true">
+      </div>
+
+      <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary" style="margin-left: 2px;">Submit Booking</button>
+        <button type="button" class="btn btn-danger" (click)="hideBookingForm()" style="margin-left: 2px;">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Bookings Table -->
+  <div class="table-responsive mt-5" *ngIf="!showBookingForm">
+    <table class="table table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Booking ID</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Status</th>
+          <th>Total Price</th>
+          <th>Car</th>
+          <th>User</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="!bookings || bookings.length === 0">
+          <td colspan="7" class="text-center">No bookings yet</td>
+        </tr>
+        <tr *ngFor="let booking of bookings">
+          <td>{{ booking.bookingId }}</td>
+          <td>{{ booking.startDate | date: 'shortDate' }}</td>
+          <td>{{ booking.endDate | date: 'shortDate' }}</td>
+          <td [ngClass]="{
+            'text-success': booking.status === 'Confirmed',
+            'text-warning': booking.status === 'Pending',
+            'text-danger': booking.status === 'Cancelled'
+          }">{{ booking.status }}</td>
+          <td>{{ booking.totalPrice | currency: 'INR':'symbol' }}</td>
+          <td>{{ booking.car.carCompany }} ({{ booking.car.carModel }})</td>
+          <td>{{ booking.user.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div> <!-- Closing tag for the outermost container -->

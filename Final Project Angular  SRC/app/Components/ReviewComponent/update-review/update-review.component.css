@@ -1,0 +1,12 @@
+.container{
+    WIDTH: 628PX;
+    padding: 38px 96px;
+    border-radius: 10px;
+    border-style: groove;
+
+}
+.h2, h2 {
+    padding-bottom: 16px;
+    text-align: center;
+    font-size: 2rem;
+}

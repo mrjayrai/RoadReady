@@ -1,0 +1,43 @@
+/* display-all-reviews.component.css */
+table {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .navbar-expand-lg .navbar-collapse {
+    /* display: -webkit-box !important;
+    display: -ms-flexbox !important; */
+    display: flex !important;
+    /* -ms-flex-preferred-size: auto;
+    flex-basis: auto; */
+    justify-content: flex-end;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: .5rem;
+    padding-left: 3.5rem;
+}
+.w-100 {
+  width: 80% !important;
+}
+
+.carousel-item-next, .carousel-item-prev, .carousel-item.active {
+  display: flex
+;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-around;
+}
+
+.Bg {
+  width: 82vw; /* Full width of the viewport */
+  height: 100vh; /* Full height of the viewport */
+  background-image: url('../../../../assets/images/payment5.jpg'); /* Set the background image */
+  background-size:initial; /* Ensure the image covers the entire div */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating the image */
+}

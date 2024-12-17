@@ -1,0 +1,34 @@
+<div class="container mt-5">
+  <h2 class="mb-4">User List</h2>
+  <div class="table-responsive">
+    <table class="table table-bordered table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>User ID</th>
+          <th>Email</th>
+          <th>Name</th>
+          <th>Phone Number</th>
+          <th>Role</th>
+          <th>Created At</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.userId }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.name }}</td>
+          <td>{{ user.phoneNumber }}</td>
+          <td>{{ user.role.roleName }}</td>
+          <td>{{ user.createdAt | date: 'short' }}</td>
+          <td>
+            <button class="btn btn-primary" >
+              <!-- (click)="editUser(user.userId)" -->
+              <i class="fas fa-edit"></i> Edit
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

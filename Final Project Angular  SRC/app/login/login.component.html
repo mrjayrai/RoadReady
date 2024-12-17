@@ -1,0 +1,50 @@
+<!-- login.component.html -->
+<div class="login-container d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div class="card shadow p-4" style="width: 100%; max-width: 400px;">
+      <h2 class="text-center mb-4">Login</h2>
+      <form (ngSubmit)="onSubmit()" >
+        <!--  -->
+        <!-- Email Field -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="Enter your email"
+            [(ngModel)]="email"
+            name="email"
+            required
+          />
+        </div>
+  
+        <!-- Password Field -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Enter your password"
+            [(ngModel)]="password"
+            name="password"
+            required
+          />
+        </div>
+  
+        <!-- Submit Button -->
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+  
+        <!-- Sign Up Link -->
+        <div class="text-center mt-3">
+          <p>
+            Don't have an account? <a routerLink="/userregister" class="text-decoration-none">Sign Up</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  

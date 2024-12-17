@@ -1,0 +1,70 @@
+<div class="d-flex">
+  <!-- Sidebar / Sidenav -->
+  <div class="bg-dark text-white p-3" style="width: 250px; height: auto; min-height: 100vh;">
+    <h4 class="text-center mb-4">Admin Dashboard</h4>
+    <nav class="nav flex-column m-2 mt-4" style="cursor: pointer;">
+      <a class="nav-link text-white" [class.active]="activeTab === 'dashboard'" (click)="activeTab = 'dashboard'">Dashboard</a>
+      <a class="nav-link text-white" [class.active]="activeTab === 'users'" (click)="activeTab = 'users'">Users</a>
+      <!-- <a class="nav-link text-white" [class.active]="activeTab === 'reports'" (click)="activeTab = 'reports'" style="display: none;">Reports</a> -->
+      <!-- <a class="nav-link text-white" [class.active]="activeTab === 'settings'" (click)="activeTab = 'settings'" style="display: none;">Settings</a> -->
+      <!-- View Bookings Tab -->
+      <a class="nav-link text-white" [class.active]="activeTab === 'viewBookings'" (click)="activeTab = 'viewBookings'" style="display: none;">View Bookings</a>
+      <!-- View Cars Tab -->
+      <a class="nav-link text-white" [class.active]="activeTab === 'viewCars'" (click)="activeTab = 'viewCars'" style="display: none;">View Cars</a>
+      <a class="nav-link text-white" [class.active]="activeTab === 'viewUsers'" (click)="activeTab = 'viewUsers'" style="display: none;">View Users</a>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="flex-grow-1 p-4">
+    <!-- Dashboard Tab -->
+    <div *ngIf="activeTab === 'dashboard'">
+      <h2>Dashboard</h2>
+      <app-admin-tab (tabChanged)="setActiveTab($event)"></app-admin-tab>
+    </div>
+
+    <!-- Users Tab -->
+    <div *ngIf="activeTab === 'users'">
+      <h2>Users</h2>
+      <p>Manage your users here.</p>
+      <app-user-list></app-user-list>
+    </div>
+
+    <!-- Reports Tab
+    <div *ngIf="activeTab === 'reports'">
+      <h2>Reports</h2>
+      <p>View reports and analytics.</p>
+    </div>
+
+    Settings Tab -->
+    <!-- <div *ngIf="activeTab === 'settings'">
+      <h2>Settings</h2>
+      <p>Configure your application settings.</p>
+    </div> -->
+
+    <!-- View Bookings Tab -->
+    <div *ngIf="activeTab === 'viewBookings'">
+      <h2>Bookings</h2>
+      <app-booking-list></app-booking-list>
+    </div>
+
+    <!-- View Cars Tab -->
+    <div *ngIf="activeTab === 'viewCars'">
+      <app-car-list></app-car-list>
+    </div>
+
+    <!-- View Users Tab -->
+    <div *ngIf="activeTab === 'viewUsers'">
+      <app-user-list></app-user-list>
+    </div>
+
+    <!-- View Payments Tab -->
+    <div *ngIf="activeTab === 'viewPayments'">
+      <app-display-all-payments></app-display-all-payments>
+    </div>
+      <!-- View Reviews Tab -->
+      <div *ngIf="activeTab === 'viewReviews'">
+        <app-display-all-review></app-display-all-review>
+      </div>
+  </div>
+</div>
